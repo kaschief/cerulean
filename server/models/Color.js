@@ -19,7 +19,7 @@ const colorSchema = new Schema({
     default: []
   },
   _owner: { type: Schema.Types.ObjectId, ref: 'User' },
-  isFavorite: { type: Boolean, default: false }
+  isFavorite: { type: Boolean, default: true }
 });
 
 const Color = mongoose.model('Color', colorSchema);
