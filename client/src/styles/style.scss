@@ -1,0 +1,44 @@
+// Your new color: here the primary color is a dark blue
+//$primary
+// $secondary
+// $success
+// $info
+// $warning
+// $danger
+// $light
+// $dark
+$mycolor: blue;
+
+@import 'bootstrap/scss/bootstrap';
+
+// You can put your own SCSS here
+
+.IronNavbar {
+  background-color: red;
+  a {
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  img {
+    height: 30px;
+  }
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+body {
+  background: lightblue;
+  //background-image: url('https://images.unsplash.com/photo-1533922922960-9fceb9ef4733?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bdf978a903113c56e96c6e2808a0a6f&auto=format&fit=crop&w=1350&q=80');
+}
+
+// body {
+//   background-image: url('paper.gif');
+//   background-color: ;
+// }
