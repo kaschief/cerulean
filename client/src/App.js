@@ -3,6 +3,7 @@ import MyNav from './components/MyNav';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Secret from './components/Secret';
 
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/colors" component={Colors} />
+            <Route path="/secret" component={Secret} />
           </Switch>
         </Container>
       </div>

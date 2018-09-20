@@ -60,6 +60,9 @@ export default class MyNav extends Component {
                 <NavItem>
                   <Link to="/logout"> Logout</Link>
                 </NavItem>
+                <NavItem>
+                  <Link to="/secret"> Secret</Link>
+                </NavItem>
               </Nav>
             </Collapse>
           </Container>

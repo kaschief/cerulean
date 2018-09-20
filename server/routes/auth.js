@@ -25,13 +25,12 @@ router.post('/signup', (req, res, next) => {
         username: username,
         password: hashPass
       };
-      return User.create(newUser).then(user => {
-        console.log('User was successfully created');
-      });
+      return User.create(newUser);
     })
-    // .then(user => {
-    //   res.json(user);
-    // })
+    .then(user => {
+      console.log('User was successfully created');
+      res.json(user);
+    })
     .catch(err => {
       next(err);
     });

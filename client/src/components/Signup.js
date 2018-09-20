@@ -10,28 +10,30 @@ export default class Signup extends Component {
     };
   }
 
-  handleInputChange(stateFieldName, event) {
+  handleInputChange = (field, event) => {
     this.setState({
-      [stateFieldName]: event.target.value
+      [field]: event.target.value
     });
-  }
+  };
 
-  handleClick(e) {
+  handleClick = e => {
     e.preventDefault();
     let data = {
       username: this.state.username,
       password: this.state.password
     };
+
+    console.log('THIS IS THE DATA', data);
     api
       .signup(data)
       .then(result => {
-        console.log('SUCCESS!');
+        console.log('SIGNUP SUCCESS!');
         this.props.history.push('/login'); // Redirect to the login page
       })
       .catch(err => {
-        console.log('ERROR');
+        console.log('SIGNUP ERROR');
       });
-  }
+  };
 
   render() {
     return (

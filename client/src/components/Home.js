@@ -11,6 +11,7 @@ export default class Home extends Component {
     return (
       <div className="Home text-center">
         <h1>Cerulean</h1>
+        <input type="text" />
         <p className="lead">Discover Your Color</p>
         <Button tag={Link} color="primary" outline to={'/discover'}>
           Search

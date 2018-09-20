@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Route to get all favorite colors
 router.get('/', isLoggedIn, (req, res, next) => {
-  Color.find()
+  Color.find({ _owner: req.user.id })
     .then(colors => {
       res.json(colors);
     })

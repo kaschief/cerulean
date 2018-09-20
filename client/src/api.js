@@ -16,16 +16,30 @@ const errHandler = err => {
 export default {
   service: service,
 
-  getCountries() {
+  getColors() {
     return service
-      .get('/countries')
+      .get('/colors/')
       .then(res => res.data)
       .catch(errHandler);
   },
 
-  postCountries(data) {
+  getSingleColor(id) {
     return service
-      .post('/countries', data)
+      .get('/colors/:id', id)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
+  deleteSingleColor(id) {
+    return service
+      .delete('/colors/:id', id)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
+  addColor(data) {
+    return service
+      .post('/colors/', data)
       .then(res => res.data)
       .catch(errHandler);
   },
@@ -39,14 +53,14 @@ export default {
 
   signup(userInfo) {
     return service
-      .post('/signup', userInfo)
+      .post('/auth/signup', userInfo)
       .then(res => res.data)
       .catch(errHandler);
   },
 
   login(username, password) {
     return service
-      .post('/login', {
+      .post('auth/login', {
         username,
         password
       })
@@ -76,18 +90,18 @@ export default {
 
   isLoggedIn() {
     return localStorage.getItem('user') != null;
-  },
-
-  addPicture(file) {
-    const formData = new FormData();
-    formData.append('picture', file);
-    return service
-      .post('/users/first-user/pictures', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      })
-      .then(res => res.data)
-      .catch(errHandler);
   }
+
+  // addPicture(file) {
+  //   const formData = new FormData();
+  //   formData.append('picture', file);
+  //   return service
+  //     .post('/users/first-user/pictures', formData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data'
+  //       }
+  //     })
+  //     .then(res => res.data)
+  //     .catch(errHandler);
+  // }
 };

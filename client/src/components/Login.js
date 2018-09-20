@@ -10,24 +10,24 @@ export default class Login extends Component {
     };
   }
 
-  handleInputChange(stateFieldName, event) {
+  handleInputChange = (field, event) => {
     this.setState({
-      [stateFieldName]: event.target.value
+      [field]: event.target.value
     });
-  }
+  };
 
-  handleClick(e) {
+  handleClick = e => {
     e.preventDefault();
     api
       .login(this.state.username, this.state.password)
       .then(result => {
-        console.log('SUCCESS!');
+        console.log('LOGIN SUCCESS!');
         this.props.history.push('/'); // Redirect to the home page
       })
       .catch(err => {
-        console.log('ERROR');
+        console.log('LOGIN ERROR');
       });
-  }
+  };
 
   render() {
     return (
