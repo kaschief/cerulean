@@ -38,7 +38,10 @@ body {
   //background-image: url('https://images.unsplash.com/photo-1533922922960-9fceb9ef4733?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bdf978a903113c56e96c6e2808a0a6f&auto=format&fit=crop&w=1350&q=80');
 }
 
-// body {
-//   background-image: url('paper.gif');
-//   background-color: ;
-// }
+.Box {
+  display: inline-flex;
+}
+
+.Search {
+  padding-top: 20px;
+}

@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 import api from '../api';
 
 class Logout extends Component {
-  constructor(props) {
-    super(props);
-  }
-  componentDidMount(props) {
+  componentDidMount() {
     api.logout().then(console.log('User successfully logged out'));
   }
   render() {

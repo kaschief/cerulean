@@ -8,7 +8,7 @@ import Logout from './components/Logout';
 
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {

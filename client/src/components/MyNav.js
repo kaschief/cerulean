@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import api from '../api';
 import { Link } from 'react-router-dom';
 import {
   Collapse,
@@ -8,12 +7,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  Container,
-  DropdownItem
+  Container
 } from 'reactstrap';
 
 export default class MyNav extends Component {
