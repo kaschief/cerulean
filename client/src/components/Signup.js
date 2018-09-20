@@ -23,7 +23,6 @@ export default class Signup extends Component {
       password: this.state.password
     };
 
-    console.log('THIS IS THE DATA', data);
     api
       .signup(data)
       .then(result => {
