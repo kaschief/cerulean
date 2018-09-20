@@ -6328,8 +6328,15 @@ h1 {
 body {
   background: lightblue; }
 
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    transform: translate3d(0, 10px, 0); } }
+
 .Box {
   display: inline-flex; }
 
 .Search {
-  padding-top: 20px; }
+  padding-top: 20px;
+  padding-bottom: 20px; }

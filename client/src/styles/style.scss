@@ -38,10 +38,30 @@ body {
   //background-image: url('https://images.unsplash.com/photo-1533922922960-9fceb9ef4733?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bdf978a903113c56e96c6e2808a0a6f&auto=format&fit=crop&w=1350&q=80');
 }
 
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 10px, 0);
+  }
+}
+
+// @keyframes preloader {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
 .Box {
   display: inline-flex;
+  // animation: preloader;
+  // //animation: bounce 0.5s cubic-bezier(0.5, 0.05, 1, 0.5);
+  // animation-direction: alternate;
+  // animation-iteration-count: infinite;
 }
 
 .Search {
   padding-top: 20px;
+  padding-bottom: 20px;
 }

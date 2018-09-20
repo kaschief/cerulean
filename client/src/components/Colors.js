@@ -14,16 +14,13 @@ export default class Colors extends Component {
   }
 
   componentDidMount() {
-    console.log('BEFORE', this.state.randomcolors);
-
     let randomArr = [];
-    for (let i = 0; i <= 15; i++) {
+    for (let i = 0; i <= 200; i++) {
       let randomIndex = Math.floor(
         Math.random() * this.state.maincolors.length
       );
       randomArr.push(this.state.maincolors[randomIndex]);
     }
-
     this.setState({
       randomcolors: randomArr
     });
@@ -46,9 +43,17 @@ export default class Colors extends Component {
           onChange={e => this.inputHandle(e)}
         />
         <div className="Group">
-          {this.state.randomcolors.map(c => {
-            return <Box key={c.hex} name={c.name} color={c.hex} />;
-          })}
+          {this.state.searchTerm === ''
+            ? this.state.randomcolors.map(c => {
+                return <Box key={c.hex} name={c.name} color={c.hex} />;
+              })
+            : this.state.maincolors
+                .filter(c => {
+                  return c.name.toLowerCase().includes(this.state.searchTerm);
+                })
+                .map(c => {
+                  return <Box key={c.hex} name={c.name} color={c.hex} />;
+                })}
         </div>
       </div>
     );
