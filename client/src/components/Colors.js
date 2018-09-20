@@ -32,10 +32,10 @@ export default class Colors extends Component {
     this.setState({
       searchTerm: newTerm
     });
-    console.log('SEARCH TERM', this.state.searchTerm);
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="Colors text-center">
         <Search
@@ -45,14 +45,23 @@ export default class Colors extends Component {
         <div className="Group">
           {this.state.searchTerm === ''
             ? this.state.randomcolors.map(c => {
-                return <Box key={c.hex} name={c.name} color={c.hex} />;
+                return (
+                  <Box
+                    key={c.name}
+                    onMouseOver={(e, b) => {
+                      this.props.onMouseOver(e, c.hex);
+                    }}
+                    name={c.name}
+                    color={c.hex}
+                  />
+                );
               })
             : this.state.maincolors
                 .filter(c => {
                   return c.name.toLowerCase().includes(this.state.searchTerm);
                 })
                 .map(c => {
-                  return <Box key={c.hex} name={c.name} color={c.hex} />;
+                  return <Box key={c.name} name={c.name} color={c.hex} />;
                 })}
         </div>
       </div>

@@ -11,16 +11,39 @@ import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      style: {
+        color: 'blue'
+      }
+    };
+  }
+
+  changeCerulean = (e, name) => {
+    this.setState({
+      style: { color: name }
+    });
+    console.log('THIS IS---->', name);
+  };
   render() {
     return (
       <div className="App">
-        <MyNav />
+        <MyNav color={this.state.style.color} />
         <Container>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/colors" component={Colors} />
+            <Route
+              path="/colors"
+              render={props => (
+                <Colors
+                  {...props}
+                  onMouseOver={(e, b) => this.changeCerulean(e, b)}
+                />
+              )}
+            />
             <Route path="/secret" component={Secret} />
             <Route path="/logout" component={Logout} />
           </Switch>

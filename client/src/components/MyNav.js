@@ -24,12 +24,15 @@ export default class MyNav extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
     return (
       <div>
         <Navbar dark expand="md" className="IronNavbar">
           <Container>
-            <NavbarBrand href="/">Cerulean</NavbarBrand>
+            <NavbarBrand style={{ color: `${this.props.color}` }} href="/">
+              Cerulean
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>

@@ -26,7 +26,7 @@ export default class Box extends Component {
     };
     return (
       <div className="Box text-center">
-        <div style={boxStyle} />
+        <div className="zoom" style={boxStyle} />
       </div>
     );
   }
