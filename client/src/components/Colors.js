@@ -59,7 +59,14 @@ export default class Colors extends Component {
                   return c.name.toLowerCase().includes(this.state.searchTerm);
                 })
                 .map(c => {
-                  return <Box key={c.name} name={c.name} color={c.hex} />;
+                  return (
+                    <Box
+                      key={c.name}
+                      onHover={this.props.onHover}
+                      name={c.name}
+                      color={c.hex}
+                    />
+                  );
                 })}
         </div>
       </div>
