@@ -6353,7 +6353,10 @@ body {
 
 .Search {
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  max-width: 100%;
+  padding-left: 20%;
+  padding-right: 20%; }
 
 .zoom {
   padding: 100%;

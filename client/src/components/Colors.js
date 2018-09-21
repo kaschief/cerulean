@@ -38,9 +38,9 @@ export default class Colors extends Component {
     });
     let delay = 200;
     setTimeout(() => {
-      console.log('setTimeout', newTerm, this.state.searchTerm);
+      //console.log('setTimeout', newTerm, this.state.searchTerm);
       if (newTerm === this.state.searchTerm) {
-        console.log('MATCH');
+        //console.log('MATCH');
         let lowerSearch = this.state.searchTerm.toLowerCase();
         if (lowerSearch === '') {
           this.setState({
@@ -75,7 +75,6 @@ export default class Colors extends Component {
   // };
 
   render() {
-    console.log(this.props);
     return (
       <div className="Colors text-center">
         <Search
