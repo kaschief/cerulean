@@ -14,22 +14,22 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: {
-        color: 'blue'
-      }
+      brandColor: 'blue'
     };
+
+    this.changeCerulean = this.changeCerulean.bind(this);
   }
 
-  changeCerulean = (e, name) => {
+  changeCerulean(color) {
+    console.log('changing the hex code fo brandcolor-->', color);
     this.setState({
-      style: { color: name }
+      brandColor: color
     });
-    console.log('THIS IS---->', name);
-  };
+  }
   render() {
     return (
       <div className="App">
-        <MyNav color={this.state.style.color} />
+        <MyNav color={this.state.brandColor} />
         <Container>
           <Switch>
             <Route path="/" exact component={Home} />
@@ -38,10 +38,7 @@ class App extends Component {
             <Route
               path="/colors"
               render={props => (
-                <Colors
-                  {...props}
-                  onMouseOver={(e, b) => this.changeCerulean(e, b)}
-                />
+                <Colors {...props} onHover={this.changeCerulean} />
               )}
             />
             <Route path="/secret" component={Secret} />

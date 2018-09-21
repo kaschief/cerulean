@@ -48,9 +48,7 @@ export default class Colors extends Component {
                 return (
                   <Box
                     key={c.name}
-                    onMouseOver={(e, b) => {
-                      this.props.onMouseOver(e, c.hex);
-                    }}
+                    onHover={this.props.onHover}
                     name={c.name}
                     color={c.hex}
                   />
