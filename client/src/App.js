@@ -20,8 +20,9 @@ class App extends Component {
     this.changeCerulean = this.changeCerulean.bind(this);
   }
 
-  changeCerulean(color) {
-    console.log('changing the hex code fo brandcolor-->', color);
+  changeCerulean(color, name) {
+    // console.log('changing the hex code fo brandcolor-->', color);
+    console.log('changing the hex code fo brandcolor-->', name);
     this.setState({
       brandColor: color
     });

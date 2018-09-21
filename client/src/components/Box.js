@@ -23,14 +23,13 @@ export default class Box extends Component {
       opacity: '1',
       fontSize: 10,
       fontWeight: 'bold',
-      // filter: 'brightness(95%)',
       padding: '5%',
       margin: '5%'
     };
     return (
       <div
         className="Box text-center"
-        onMouseOver={e => this.props.onHover(this.props.color)}
+        onMouseOver={e => this.props.onHover(this.props.color, this.props.name)}
       >
         <div className="zoom" style={boxStyle} />
       </div>
