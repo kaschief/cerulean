@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Button from './Button';
+import { Link, NavLink } from 'react-router-dom';
+import api from '../api';
 import {
   Collapse,
   Navbar,
@@ -37,7 +37,7 @@ export default class MyNav extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                {/* <NavItem>
+                <NavItem>
                   {!api.isLoggedIn() && <Link to="/login">Login</Link>}
                   {api.isLoggedIn() && <Link to="/signup">Signup</Link>}
                   {api.isLoggedIn() && (
@@ -45,33 +45,23 @@ export default class MyNav extends Component {
                       Logout
                     </NavLink>
                   )}
-                </NavItem> */}
-                <NavItem>
-                  <Link to="/colors">
-                    <Button text="Colors" />
-                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/signup">
-                    <Button text="Signup" />
-                  </Link>
+                  <NavLink activeClassName="active" to="/colors">
+                    Colors
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <Link to="/login">
-                    <Button text="Login" />
-                  </Link>
+                  <Link to="/signup"> Signup</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/logout">
-                    {' '}
-                    <Button text="Logout" />
-                  </Link>
+                  <Link to="/login">Login</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/secret">
-                    {' '}
-                    <Button text="Secret" />
-                  </Link>
+                  <Link to="/logout"> Logout</Link>
+                </NavItem>
+                <NavItem>
+                  <Link to="/secret"> Secret</Link>
                 </NavItem>
               </Nav>
             </Collapse>

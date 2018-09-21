@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6313,17 +6314,18 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 .IronNavbar {
-  background-color: black; }
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 20px; }
   .IronNavbar a {
-    color: white;
+    color: green;
     padding-left: 5px;
     padding-right: 5px; }
 
 .Logo {
   color: blue; }
 
-h1 {
-  margin-top: 50%; }
+.activeClassName {
+  color: green; }
 
 .container {
   max-width: 800px; }
@@ -6333,14 +6335,12 @@ h1 {
   padding-bottom: 25px; }
 
 body {
-  background: #f7f7f7;
+  background-image: url("https://images.unsplash.com/photo-1464468164664-850fcaf6be4a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=164d430b249b7c46cd8f3e982be70dea&auto=format&fit=crop&w=1031&q=80");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  background-size: cover; }
-
-.Home {
-  background-color: red; }
+  background-size: cover;
+  font-family: 'Amatic SC', cursive; }
 
 @keyframes bounce {
   from {
@@ -6389,3 +6389,6 @@ body {
   width: auto;
   height: auto;
   z-index: -100; }
+
+.card {
+  background-color: black; }
