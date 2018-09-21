@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import Search from './Search';
 
 export default class Home extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class Home extends Component {
     return (
       <div className="Home text-center">
         <h1>Cerulean</h1>
-        <input type="text" />
+        <Search />
         <p className="lead">Discover Your Color</p>
         <Button tag={Link} color="primary" outline to={'/discover'}>
           Search

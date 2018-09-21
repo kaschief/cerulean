@@ -34,13 +34,21 @@ export default class Colors extends Component {
     });
   };
 
+  // submitHandle = event => {
+  //   event.preventDefault();
+  //   this.setState({
+  //     searchTerm: newTerm
+  //   });
+  // };
+
   render() {
     console.log(this.props);
     return (
       <div className="Colors text-center">
         <Search
           search={this.state.searchTerm}
-          onChange={e => this.inputHandle(e)}
+          change={e => this.inputHandle(e)}
+          //onSubmit={e => this.submitHandle(e)}
         />
         <div className="Group">
           {this.state.searchTerm === ''
