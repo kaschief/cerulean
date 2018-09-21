@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Search from './Search';
 import Box from './Box';
+import Card from './Card';
+
 import allcolors from '../allcolors.json';
 
 const MAX_RESULT = 200;
@@ -66,29 +67,25 @@ export default class Colors extends Component {
       }
     }, delay);
   };
-
-  // submitHandle = event => {
-  //   event.preventDefault();
-  //   this.setState({
-  //     searchTerm: newTerm
-  //   });
-  // };
-
   render() {
     return (
-      <div className="Colors text-center">
-        <Search
+      <div className="Colors text-center container">
+        <Card
           search={this.state.searchTerm}
           change={e => this.inputHandle(e)}
-          //onSubmit={e => this.submitHandle(e)}
+          name={this.props.name}
+          hex={this.props.hex}
+          rgb={this.props.rgb}
         />
+
         <div className="Group">
           {this.state.displayedColors.map(c => (
             <Box
-              key={c.name}
-              onHover={this.props.onHover}
+              key={c.hex}
               name={c.name}
-              color={c.hex}
+              hex={c.hex}
+              rgb={c.rgb}
+              onHover={this.props.onHover}
             />
           ))}
           {/* {this.state.searchTerm.length <= 2

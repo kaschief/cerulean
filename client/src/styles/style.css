@@ -6313,7 +6313,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 .IronNavbar {
-  background-color: red; }
+  background-color: black; }
   .IronNavbar a {
     color: white;
     padding-left: 5px;
@@ -6323,10 +6323,14 @@ a.text-dark:hover, a.text-dark:focus {
   color: blue; }
 
 h1 {
-  margin-bottom: 20px; }
+  margin-top: 50%; }
 
 .container {
   max-width: 800px; }
+
+.searchText {
+  padding-top: 25px;
+  padding-bottom: 25px; }
 
 body {
   background: #f7f7f7;
@@ -6335,11 +6339,17 @@ body {
   background-attachment: fixed;
   background-size: cover; }
 
+.Home {
+  background-color: red; }
+
 @keyframes bounce {
   from {
     transform: translate3d(0, 0, 0); }
   to {
     transform: translate3d(0, 10px, 0); } }
+
+.searchBar {
+  padding-top: 20%; }
 
 .Box {
   display: inline-flex;
@@ -6352,11 +6362,7 @@ body {
   /* For IE8 and earlier */ }
 
 .Search {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 100%;
-  padding-left: 20%;
-  padding-right: 20%; }
+  max-width: 100%; }
 
 .zoom {
   padding: 100%;

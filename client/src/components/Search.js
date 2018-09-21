@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input } from 'reactstrap';
+import { Input } from 'reactstrap';
 
 export default class Search extends Component {
   render() {

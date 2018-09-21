@@ -16,9 +16,9 @@ export default class Box extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
-      border: `1px solid ${this.props.color}`,
+      border: `1px solid ${this.props.hex}`,
       borderRadius: '50%',
-      backgroundColor: `${this.props.color}`,
+      backgroundColor: `${this.props.hex}`,
       boxShadow: '0.5px 0.5px 2px #888888',
       opacity: '1',
       fontSize: 10,
@@ -29,7 +29,9 @@ export default class Box extends Component {
     return (
       <div
         className="Box text-center"
-        onMouseOver={e => this.props.onHover(this.props.color, this.props.name)}
+        onMouseOver={e =>
+          this.props.onHover(this.props.name, this.props.hex, this.props.rgb)
+        }
       >
         <div className="zoom" style={boxStyle} />
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from './Button';
 import {
   Collapse,
   Navbar,
@@ -46,19 +47,31 @@ export default class MyNav extends Component {
                   )}
                 </NavItem> */}
                 <NavItem>
-                  <Link to="/colors"> My Colors</Link>
+                  <Link to="/colors">
+                    <Button text="Colors" />
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/signup"> Signup</Link>
+                  <Link to="/signup">
+                    <Button text="Signup" />
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/login">Login</Link>
+                  <Link to="/login">
+                    <Button text="Login" />
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/logout"> Logout</Link>
+                  <Link to="/logout">
+                    {' '}
+                    <Button text="Logout" />
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/secret"> Secret</Link>
+                  <Link to="/secret">
+                    {' '}
+                    <Button text="Secret" />
+                  </Link>
                 </NavItem>
               </Nav>
             </Collapse>
