@@ -63,7 +63,7 @@ export default class Colors extends Component {
         <div className="Group">
           {this.state.displayedColors.map(c => (
             <Box
-              key={c.name}
+              key={c.hex}
               name={c.name}
               hex={c.hex}
               rgb={c.rgb}
@@ -75,55 +75,3 @@ export default class Colors extends Component {
     );
   }
 }
-
-{
-  /* {this.state.searchTerm.length <= 2
-            ? this.state.randomcolors.map(c => {
-                return (
-                  <Box
-                    key={c.name}
-                    onHover={this.props.onHover}
-                    name={c.name}
-                    color={c.hex}
-                  />
-                );
-              })
-            : this.state.maincolors
-                .filter(c => {
-                  return c.name.toLowerCase().includes(this.state.searchTerm);
-                })
-                .map(c => {
-                  return (
-                    <Box
-                      key={c.name}
-                      onHover={this.props.onHover}
-                      name={c.name}
-                      color={c.hex}
-                    />
-                  );
-                //})} */
-}
-
-{
-  /* <Card
-          search={this.state.searchTerm}
-          change={e => this.inputHandle(e)}
-          name={this.props.name}
-          hex={this.props.hex}
-          rgb={this.props.rgb}
-        /> */
-}
-
-// componentDidMount() {
-//   let randomArr = [];
-//   for (let i = 0; i <= 200; i++) {
-//     let randomIndex = Math.floor(
-//       Math.random() * this.state.maincolors.length
-//     );
-//     randomArr.push(this.state.maincolors[randomIndex]);
-//   }
-//   this.setState({
-//     randomcolors: randomArr
-//   });
-
-// }

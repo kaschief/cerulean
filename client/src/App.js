@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Secret from './components/Secret';
 import Logout from './components/Logout';
+import Details from './components/Details';
 
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
@@ -38,9 +39,10 @@ class App extends Component {
         <Container>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
             <Route
+              exact
               path="/colors"
               render={props => (
                 <Colors
@@ -52,8 +54,19 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/secret" component={Secret} />
-            <Route path="/logout" component={Logout} />
+            <Route exact path="/secret" component={Secret} />
+            <Route exact path="/logout" component={Logout} />
+            <Route
+              path="/colors/:id"
+              render={props => (
+                <Details
+                  {...props}
+                  name={this.state.name}
+                  hex={this.state.hex}
+                  rgb={this.state.rgb}
+                />
+              )}
+            />
           </Switch>
         </Container>
       </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from './Search';
+import { Link } from 'react-router-dom';
 
 class Card extends Component {
   constructor(props) {
@@ -10,17 +10,20 @@ class Card extends Component {
     let r = this.props.rgb ? ` ${this.props.rgb.r},` : '';
     let g = this.props.rgb ? ` ${this.props.rgb.g},` : '';
     let b = this.props.rgb ? ` ${this.props.rgb.b}` : '';
+    let subHex = this.props.hex.substring(1, 7);
     return (
       <div className="info">
         {this.props.rgb && (
-          <div>
-            <p>{this.props.name}</p>
-            <p>
-              Hex:
-              {` ${this.props.hex}`}{' '}
-            </p>
-            <p>RGB: {`${r} ${g} ${b}`} </p>
-          </div>
+          <Link to={'/colors/' + subHex}>
+            <div>
+              <p>{this.props.name}</p>
+              <p>
+                Hex:
+                {` ${this.props.hex}`}{' '}
+              </p>
+              <p>RGB: {`${r} ${g} ${b}`} </p>
+            </div>
+          </Link>
         )}
       </div>
     );
