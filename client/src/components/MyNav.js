@@ -29,7 +29,7 @@ export default class MyNav extends Component {
   render() {
     return (
       <div>
-        <Navbar dark expand="md" className="IronNavbar">
+        <Navbar dark expand="sm" className="IronNavbar">
           <Container>
             <NavbarBrand style={{ color: `${this.props.color}` }} href="/">
               Cerulean

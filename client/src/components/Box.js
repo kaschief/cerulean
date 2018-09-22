@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
+import Card from './Card';
 
 export default class Box extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: false
+    };
+  }
+
+  cardIsIn = () => {
+    this.setState({
+      display: true
+    });
+  };
+
+  cardIsOut = () => {
+    this.setState({
+      display: false
+    });
+  };
+
   render() {
     const K_WIDTH = 50;
     const K_HEIGHT = 50;
@@ -29,11 +49,27 @@ export default class Box extends Component {
     return (
       <div
         className="Box text-center"
+        onMouseEnter={e => {
+          this.cardIsIn();
+        }}
+        onMouseLeave={e => {
+          this.cardIsOut();
+        }}
         onMouseOver={e =>
           this.props.onHover(this.props.name, this.props.hex, this.props.rgb)
         }
       >
-        <div className="zoom" style={boxStyle} />
+        <div className="zoom" style={boxStyle}>
+          <div className="innerText">
+            {this.state.display && (
+              <Card
+                name={this.props.name}
+                hex={this.props.hex}
+                rgb={this.props.rgb}
+              />
+            )}
+          </div>
+        </div>
       </div>
     );
   }

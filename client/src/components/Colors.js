@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Box from './Box';
 import Card from './Card';
-
+import Search from './Search';
 import allcolors from '../allcolors.json';
 
 const MAX_RESULT = 200;
@@ -11,25 +11,11 @@ export default class Colors extends Component {
     super(props);
     this.state = {
       searchTerm: '',
-      randomcolors: [],
+      randomcolors: [1, 2, 3],
       maincolors: allcolors, //allcolors.slice(0, 30)
       displayedColors: allcolors.slice(0, MAX_RESULT)
     };
   }
-
-  // componentDidMount() {
-  //   let randomArr = [];
-  //   for (let i = 0; i <= 200; i++) {
-  //     let randomIndex = Math.floor(
-  //       Math.random() * this.state.maincolors.length
-  //     );
-  //     randomArr.push(this.state.maincolors[randomIndex]);
-  //   }
-  //   this.setState({
-  //     randomcolors: randomArr
-  //   });
-
-  // }
 
   inputHandle = event => {
     //capture new search term
@@ -70,25 +56,28 @@ export default class Colors extends Component {
   render() {
     return (
       <div className="Colors text-center container">
-        <Card
+        <Search
           search={this.state.searchTerm}
           change={e => this.inputHandle(e)}
-          name={this.props.name}
-          hex={this.props.hex}
-          rgb={this.props.rgb}
         />
-
         <div className="Group">
           {this.state.displayedColors.map(c => (
             <Box
-              key={c.hex}
+              key={c.name}
               name={c.name}
               hex={c.hex}
               rgb={c.rgb}
               onHover={this.props.onHover}
             />
           ))}
-          {/* {this.state.searchTerm.length <= 2
+        </div>
+      </div>
+    );
+  }
+}
+
+{
+  /* {this.state.searchTerm.length <= 2
             ? this.state.randomcolors.map(c => {
                 return (
                   <Box
@@ -112,9 +101,29 @@ export default class Colors extends Component {
                       color={c.hex}
                     />
                   );
-                })} */}
-        </div>
-      </div>
-    );
-  }
+                //})} */
 }
+
+{
+  /* <Card
+          search={this.state.searchTerm}
+          change={e => this.inputHandle(e)}
+          name={this.props.name}
+          hex={this.props.hex}
+          rgb={this.props.rgb}
+        /> */
+}
+
+// componentDidMount() {
+//   let randomArr = [];
+//   for (let i = 0; i <= 200; i++) {
+//     let randomIndex = Math.floor(
+//       Math.random() * this.state.maincolors.length
+//     );
+//     randomArr.push(this.state.maincolors[randomIndex]);
+//   }
+//   this.setState({
+//     randomcolors: randomArr
+//   });
+
+// }

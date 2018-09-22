@@ -23,8 +23,8 @@ class App extends Component {
   }
 
   changeCerulean(name, hex, rgb) {
-    // console.log('changing the hex code fo mainColor-->', color);
-    console.log('changing the hex code fo mainColor-->', name, rgb);
+    //console.log('changing the hex code fo mainColor-->', color);
+    console.log('Current color is -->', name, rgb);
     this.setState({
       name: name,
       hex: hex,
