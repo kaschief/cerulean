@@ -20,13 +20,6 @@ export default class Info extends Component {
     return (
       <div>
         <Card>
-          {/* <div
-            className="title"
-            style={{ backgroundColor: `${this.props.hex}` }}
-          >
-            <h1>{this.state.name}</h1>
-          </div> */}
-
           <CardBody>
             {/* <CardTitle>More about {this.props.name}</CardTitle> */}
             <CardSubtitle>
@@ -35,7 +28,11 @@ export default class Info extends Component {
             </CardSubtitle>
             <CardText>
               Some quick Info text to build on the card title and make up the
-              bulk of the card's content.
+              bulk of the card's content. Some quick Info text to build on the
+              card title and make up the bulk of the card's content. Some quick
+              Info text to build on the card title and make up the bulk of the
+              card's content. Some quick Info text to build on the card title
+              and make up the bulk of the card's content.
             </CardText>
             <Table borderless>
               <tbody>
@@ -49,7 +46,7 @@ export default class Info extends Component {
                 </tr>
               </tbody>
             </Table>
-            <Button>Button</Button>
+            <Button>Save</Button>
           </CardBody>
         </Card>
       </div>

@@ -6439,6 +6439,15 @@ body {
   border-radius: 25px;
   margin-top: 5%; }
 
+.input-range {
+  margin-bottom: 10%;
+  margin-top: -2%; }
+
+.slider-div {
+  margin-top: 5%; }
+  .slider-div p {
+    padding-bottom: 10%; }
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {

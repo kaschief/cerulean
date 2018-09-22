@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import allcolors from '../allcolors.json';
 import Meanings from '../meanings.json';
 import Info from './Info';
+import Range from './Range';
 
 class Details extends Component {
   constructor(props) {
@@ -34,14 +35,6 @@ class Details extends Component {
     let r = this.state.rgb.r;
     let g = this.state.rgb.g;
     let b = this.state.rgb.b;
-    // const mainStyle = {
-    //   //backgroundColor: `${this.state.color}`,
-    //   height: '90vh',
-    //   //width: '0vw'
-    //   border: '1px solid black',
-    //   borderRadius: '25px',
-    //   marginTop: '5%'
-    // };
     console.log('success', this.props);
     return (
       <div className="Details text-center">
@@ -51,10 +44,24 @@ class Details extends Component {
         <div className="main-div">
           <Info hex={this.state.hex} name={this.state.name} r={r} g={g} b={b} />
         </div>
-        <div className="details-box" />
+        <div className="title slider-div">
+          <p>Slide to change color</p>
+          <Range className="slider" value={r} />
+          <Range className="slider" value={g} />
+          <Range className="slider" value={b} />
+        </div>
       </div>
     );
   }
 }
 
 export default Details;
+
+// const mainStyle = {
+//   //backgroundColor: `${this.state.color}`,
+//   height: '90vh',
+//   //width: '0vw'
+//   border: '1px solid black',
+//   borderRadius: '25px',
+//   marginTop: '5%'
+// };
