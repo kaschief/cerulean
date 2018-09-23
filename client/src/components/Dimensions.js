@@ -57,93 +57,114 @@ class Dimensions extends Component {
     return (
       <Container className="title dimensions-box">
         <Row>
-          {analagous.map(c => {
-            console.log('C INSIDE OF ANALAGOUS---->', c);
-            {
-              /* let name = allcolors.filter(color => {
+          <Col sm="3" className="dimensions-text">
+            Analagous
+          </Col>
+
+          <Col sm="9">
+            {analagous.map(c => {
+              console.log('C INSIDE OF ANALAGOUS---->', c);
+              {
+                /* let name = allcolors.filter(color => {
                 return color.hex === c;
               }).name; */
-            }
+              }
 
-            return (
-              <Box
-                key={c}
-                //name={name}
-                hex={c}
-                rgb={rgb}
-                onHover={this.props.onHover}
-              />
-            );
-          })}
+              return (
+                <Box
+                  key={c}
+                  //name={name}
+                  hex={c}
+                  rgb={rgb}
+                  onHover={this.props.onHover}
+                />
+              );
+            })}
+          </Col>
         </Row>
         <div>
           <hr />
         </div>
         <Row>
-          {tetrad.map(c => {
-            console.log('C INSIDE OF TETRAD---->', c);
-            {
-              /* let name = allcolors.filter(color => {
+          <Col sm="3" className="dimensions-text">
+            Tetrad
+          </Col>
+          <Col sm="9">
+            {tetrad.map(c => {
+              console.log('C INSIDE OF ANALAGOUS---->', c);
+              {
+                /* let name = allcolors.filter(color => {
                 return color.hex === c;
               }).name; */
-            }
+              }
 
-            return (
-              <Box
-                key={c}
-                //name={name}
-                hex={c}
-                rgb={rgb}
-                onHover={this.props.onHover}
-              />
-            );
-          })}
+              return (
+                <Box
+                  key={c}
+                  //name={name}
+                  hex={c}
+                  rgb={rgb}
+                  onHover={this.props.onHover}
+                />
+              );
+            })}
+          </Col>
         </Row>
         <div>
           <hr />
         </div>
         <Row>
-          {splitcomplement.map(c => {
-            console.log('C INSIDE OF SPLIT---->', c);
-            {
-              /* let name = allcolors.filter(color => {
+          <Col sm="3" className="dimensions-text">
+            Split Compliments
+          </Col>
+          <Col sm="9">
+            {splitcomplement.map(c => {
+              console.log('C INSIDE OF ANALAGOUS---->', c);
+              {
+                /* let name = allcolors.filter(color => {
                 return color.hex === c;
               }).name; */
-            }
+              }
 
-            return (
-              <Box
-                key={c}
-                //name={name}
-                hex={c}
-                rgb={rgb}
-                onHover={this.props.onHover}
-              />
-            );
-          })}
+              return (
+                <Box
+                  key={c}
+                  //name={name}
+                  hex={c}
+                  rgb={rgb}
+                  onHover={this.props.onHover}
+                />
+              );
+            })}
+          </Col>
         </Row>
         <div>
           <hr />
         </div>
         <Row>
-          {monochromatic.map(c => {
-            console.log('C INSIDE OF MONOCHROMATIC---->', c);
-            {
-              /* let name = allcolors.filter(color => {
+          <Col sm="3" className="dimensions-text">
+            Monochromatic
+          </Col>
+          <Col sm="9">
+            {monochromatic.map(c => {
+              console.log('C INSIDE OF ANALAGOUS---->', c);
+              {
+                /* let name = allcolors.filter(color => {
                 return color.hex === c;
               }).name; */
-            }
+              }
 
-            return (
-              <Box
-                key={c}
-                //name={name}
-                hex={c}
-                rgb={rgb}
-                onHover={this.props.onHover}
-              />
-            );
-          })}
+              return (
+                <Box
+                  key={c}
+                  //name={name}
+                  hex={c}
+                  rgb={rgb}
+                  onHover={this.props.onHover}
+                />
+              );
+            })}
+          </Col>
         </Row>
       </Container>
     );

@@ -6469,6 +6469,9 @@ body {
 .dimensions-box {
   margin-top: 25px; }
 
+.dimensions-text {
+  padding-top: 15px; }
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {
