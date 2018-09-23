@@ -70,13 +70,17 @@ class Details extends Component {
             family={this.state.family}
           />
         </div>
+        <Dimensions
+          className="title dimensions-box"
+          hex={this.state.hex}
+          onHover={this.props.onHover}
+        />
         <div className="title slider-div">
           <p>Slide to change color</p>
           <Range className="slider" value={r} />
           <Range className="slider" value={g} />
           <Range className="slider" value={b} />
         </div>
-        <Dimensions className="dimensions-box" hex={this.state.hex} />
       </div>
     );
   }

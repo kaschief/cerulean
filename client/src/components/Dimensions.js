@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import { Container, Row, Col } from 'reactstrap';
+import Box from './Box';
+import allcolors from '../allcolors.json';
 
 class Dimensions extends Component {
   render() {
     let color = tinycolor(this.props.hex);
+    let rgb = color.toRgb();
+    // let name = allcolors.find(maincolor => {
+    //   return maincolor.hex === this.props.hex;
+    // }).name;
+
+    //console.log('FOUND THE NAME------>', name);
+
+    console.log('rgb: ', rgb);
+    // console.log('name: ', name);
     //console.log('INSIDE TINY COLOR------>', color.toName());
 
     let analagous = tinycolor(this.props.hex)
@@ -43,63 +54,97 @@ class Dimensions extends Component {
         return t.toHexString();
       });
 
-    let dark = color.isDark();
-
     return (
-      <Container>
-        <div>
-          <div className="title">
-            This is a {dark ? 'DARK ' : 'LIGHT '}
-            color.
-          </div>
-          <div className="title">
-            <Row>
-              <Col>.col</Col>
-              <Col>.col</Col>
-              <Col>.col</Col>
-              <Col>.col</Col>
-              <Col>.col</Col>
-              <Col>.col</Col>
-            </Row>
-          </div>
-          {/* {analagous.map(c => {
-          return (
-            <div className="title" style={{ backgroundColor: `${c}` }}>
-              <p>The HEX is {c}</p>
-            </div>
-          );
-        })} */}
-          {/* {triad.map(c => {
-          return (
-            <div className="title" style={{ backgroundColor: `${c}` }}>
-              <p>The HEX is {c}</p>
-            </div>
-          );
-        })} */}
-          {/* {tetrad.map(c => {
-          return (
-            <div className="title" style={{ backgroundColor: `${c}` }}>
-              <p>The HEX is {c}</p>
-            </div>
-          );
-        })} */}
+      <Container className="title dimensions-box">
+        <Row>
+          {analagous.map(c => {
+            console.log('C INSIDE OF ANALAGOUS---->', c);
+            {
+              /* let name = allcolors.filter(color => {
+                return color.hex === c;
+              }).name; */
+            }
 
-          {/* {splitcomplement.map(c => {
-          return (
-            <div className="title" style={{ backgroundColor: `${c}` }}>
-              <p>The HEX is {c}</p>
-            </div>
-          );
-        })} */}
-
-          {monochromatic.map(c => {
             return (
-              <div className="title" style={{ backgroundColor: `${c}` }}>
-                <p>The HEX is {c}</p>
-              </div>
+              <Box
+                key={c}
+                //name={name}
+                hex={c}
+                rgb={rgb}
+                onHover={this.props.onHover}
+              />
             );
           })}
+        </Row>
+        <div>
+          <hr />
         </div>
+        <Row>
+          {tetrad.map(c => {
+            console.log('C INSIDE OF TETRAD---->', c);
+            {
+              /* let name = allcolors.filter(color => {
+                return color.hex === c;
+              }).name; */
+            }
+
+            return (
+              <Box
+                key={c}
+                //name={name}
+                hex={c}
+                rgb={rgb}
+                onHover={this.props.onHover}
+              />
+            );
+          })}
+        </Row>
+        <div>
+          <hr />
+        </div>
+        <Row>
+          {splitcomplement.map(c => {
+            console.log('C INSIDE OF SPLIT---->', c);
+            {
+              /* let name = allcolors.filter(color => {
+                return color.hex === c;
+              }).name; */
+            }
+
+            return (
+              <Box
+                key={c}
+                //name={name}
+                hex={c}
+                rgb={rgb}
+                onHover={this.props.onHover}
+              />
+            );
+          })}
+        </Row>
+        <div>
+          <hr />
+        </div>
+        <Row>
+          {monochromatic.map(c => {
+            console.log('C INSIDE OF MONOCHROMATIC---->', c);
+            {
+              /* let name = allcolors.filter(color => {
+                return color.hex === c;
+              }).name; */
+            }
+
+            return (
+              <Box
+                key={c}
+                //name={name}
+                hex={c}
+                rgb={rgb}
+                onHover={this.props.onHover}
+              />
+            );
+          })}
+        </Row>
       </Container>
     );
   }

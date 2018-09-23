@@ -64,6 +64,7 @@ class App extends Component {
                   name={this.state.name}
                   hex={this.state.hex}
                   rgb={this.state.rgb}
+                  onHover={this.changeCerulean}
                 />
               )}
             />

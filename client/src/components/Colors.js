@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Box from './Box';
-import Card from './Card';
 import Search from './Search';
 import allcolors from '../allcolors.json';
 
@@ -11,7 +10,6 @@ export default class Colors extends Component {
     super(props);
     this.state = {
       searchTerm: '',
-      randomcolors: [1, 2, 3],
       maincolors: allcolors, //allcolors.slice(0, 30)
       displayedColors: allcolors.slice(0, MAX_RESULT)
     };

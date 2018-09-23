@@ -142,6 +142,11 @@ body {
   display: none;
 }
 
+.related {
+  height: 100vh;
+  width: 50%;
+}
+
 #background-video {
   /*  making the video fullscreen  */
   position: fixed;
@@ -198,6 +203,10 @@ body {
 }
 
 #root > div > div.container > div > div:nth-child(4) {
+  margin-top: 25px;
+}
+
+.dimensions-box {
   margin-top: 25px;
 }
 
