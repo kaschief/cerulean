@@ -9,14 +9,13 @@ import {
   CardSubtitle,
   Button
 } from 'reactstrap';
+import tinycolor from 'tinycolor2';
 
 export default class Info extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
-    console.log('INSIDE INFO---->', this.props);
+    let color = tinycolor(this.props.hex);
+    let dark = color.isDark();
+
     return (
       <div>
         <Card>
@@ -28,10 +27,23 @@ export default class Info extends Component {
                 {this.props.family} family of colors?
               </CardSubtitle>
             )}
+            <div>
+              <hr />
+            </div>
 
             {this.props.meaning.length > 0 && (
               <CardText>{this.props.meaning}</CardText>
             )}
+            <div>
+              <div>
+                <hr />
+              </div>{' '}
+              This is a {dark ? 'DARK ' : 'LIGHT '}
+              color.
+            </div>
+            <div>
+              <hr />
+            </div>
             <Table borderless>
               <tbody>
                 <tr>

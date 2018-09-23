@@ -3,6 +3,7 @@ import allcolors from '../allcolors.json';
 import Meanings from '../meanings.json';
 import Info from './Info';
 import Range from './Range';
+import Dimensions from './Dimensions';
 
 class Details extends Component {
   constructor(props) {
@@ -53,7 +54,6 @@ class Details extends Component {
     let r = this.state.rgb.r;
     let g = this.state.rgb.g;
     let b = this.state.rgb.b;
-    console.log('success', this.props);
     return (
       <div className="Details text-center">
         <div className="title" style={{ backgroundColor: `${this.state.hex}` }}>
@@ -76,6 +76,7 @@ class Details extends Component {
           <Range className="slider" value={g} />
           <Range className="slider" value={b} />
         </div>
+        <Dimensions className="dimensions-box" hex={this.state.hex} />
       </div>
     );
   }

@@ -9,7 +9,7 @@ class Range extends Component {
     this.state = {
       value: ''
     };
-    console.log('FIRST RANGE----->', this.state.value, this.props);
+    //console.log('FIRST RANGE----->', this.state.value, this.props);
   }
 
   componentDidMount = () => {
@@ -17,7 +17,7 @@ class Range extends Component {
       value: this.props.value
     });
 
-    console.log('NOW IT IS', this.state.value);
+    //console.log('NOW IT IS', this.state.value);
   };
 
   valueChangeHandle = event => {
@@ -27,7 +27,7 @@ class Range extends Component {
   };
 
   render() {
-    console.log('THIRD RANGE------>', this.props.value);
+    //console.log('THIRD RANGE------>', this.props.value);
     return (
       <InputRange
         maxValue={255}
