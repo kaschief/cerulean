@@ -11,6 +11,7 @@ class Details extends Component {
       hex: `#${this.props.match.params.id}`,
       name: '',
       rgb: {},
+      family: '',
       meaning: ''
     };
   }
@@ -19,16 +20,33 @@ class Details extends Component {
     let name = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
     }).name;
-    // let meaning = meanings.find(c=>{
-    //   return c.name ===
-    // })
+
+    let meaning;
+    let family;
+
+    let result = Meanings.filter(m => {
+      return new RegExp(m.name, 'i').test(name);
+    });
+
+    if (result.length > 0) {
+      meaning = result[0].meaning;
+      family = result[0].name.toUpperCase();
+    } else {
+      meaning = '';
+      family = '';
+    }
+
     let rgb = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
     }).rgb;
-    console.log('this is the NAME------>', name, rgb);
+
+    console.log('this is the MEANING------>', family, meaning);
+
     this.setState({
       name: name,
-      rgb: rgb
+      rgb: rgb,
+      family: family,
+      meaning: meaning
     });
   };
   render() {
@@ -42,7 +60,15 @@ class Details extends Component {
           <h1>{this.state.name}</h1>
         </div>
         <div className="main-div">
-          <Info hex={this.state.hex} name={this.state.name} r={r} g={g} b={b} />
+          <Info
+            hex={this.state.hex}
+            name={this.state.name}
+            r={r}
+            g={g}
+            b={b}
+            meaning={this.state.meaning}
+            family={this.state.family}
+          />
         </div>
         <div className="title slider-div">
           <p>Slide to change color</p>

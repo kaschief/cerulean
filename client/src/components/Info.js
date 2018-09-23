@@ -22,18 +22,16 @@ export default class Info extends Component {
         <Card>
           <CardBody>
             {/* <CardTitle>More about {this.props.name}</CardTitle> */}
-            <CardSubtitle>
-              Did you know that {this.props.name} is part of the family of
-              MEANING?
-            </CardSubtitle>
-            <CardText>
-              Some quick Info text to build on the card title and make up the
-              bulk of the card's content. Some quick Info text to build on the
-              card title and make up the bulk of the card's content. Some quick
-              Info text to build on the card title and make up the bulk of the
-              card's content. Some quick Info text to build on the card title
-              and make up the bulk of the card's content.
-            </CardText>
+            {this.props.meaning.length > 0 && (
+              <CardSubtitle>
+                Did you know that {this.props.name} is part of the{' '}
+                {this.props.family} family of colors?
+              </CardSubtitle>
+            )}
+
+            {this.props.meaning.length > 0 && (
+              <CardText>{this.props.meaning}</CardText>
+            )}
             <Table borderless>
               <tbody>
                 <tr>
