@@ -10,12 +10,12 @@
 $mycolor: blue;
 
 @import 'bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Rock+Salt|Nothing+You+Could+Do');
 
 // You can put your own SCSS here
 
 .IronNavbar {
-  background-color: rgba(255, 0, 0, 0.8);
+  background-color: rgba(255, 0, 0, 0);
   margin-bottom: 20px;
   width: 100%;
   font-size: 20px;
@@ -30,6 +30,16 @@ $mycolor: blue;
   color: $mycolor;
 }
 
+.lead {
+  font-family: 'Nothing You Could Do', cursive;
+  color: red;
+  font-size: 200%;
+  font-weight: 700;
+}
+
+// .color-title {
+//   font-size: 00%;
+// }
 h1 {
   color: white;
 }
@@ -48,8 +58,9 @@ h1 {
 }
 body {
   background: #f7f7f7;
-  //background-image: url('https://images.unsplash.com/photo-1464468164664-850fcaf6be4a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=164d430b249b7c46cd8f3e982be70dea&auto=format&fit=crop&w=1031&q=80');
+  background-image: url('https://images.unsplash.com/photo-1463438690606-f6778b8c1d10?ixlib=rb-0.3.5&s=974c85db1b734c7d1630f3a32f0cc15a&auto=format&fit=crop&w=1534&q=80');
   background-repeat: no-repeat;
+  filter: blur(0px);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
@@ -160,7 +171,7 @@ body {
 }
 
 .home-frame {
-  padding: 20%;
+  padding-top: 25%;
   color: white;
   // border: 1px solid blue
 }
@@ -180,6 +191,12 @@ body {
     margin-left: 20%;
     margin-right: 20%;
   }
+}
+
+#root > div > div.container > div > div > a > h1 {
+  font-size: 500%;
+  font-family: 'Rock Salt', cursive;
+  color: white;
 }
 
 .main-div {

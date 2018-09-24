@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Rock+Salt|Nothing+You+Could+Do");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6314,7 +6314,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 .IronNavbar {
-  background-color: rgba(255, 0, 0, 0.8);
+  background-color: rgba(255, 0, 0, 0);
   margin-bottom: 20px;
   width: 100%;
   font-size: 20px; }
@@ -6325,6 +6325,12 @@ a.text-dark:hover, a.text-dark:focus {
 
 .Logo {
   color: blue; }
+
+.lead {
+  font-family: 'Nothing You Could Do', cursive;
+  color: red;
+  font-size: 200%;
+  font-weight: 700; }
 
 h1 {
   color: white; }
@@ -6341,7 +6347,9 @@ h1 {
 
 body {
   background: #f7f7f7;
+  background-image: url("https://images.unsplash.com/photo-1463438690606-f6778b8c1d10?ixlib=rb-0.3.5&s=974c85db1b734c7d1630f3a32f0cc15a&auto=format&fit=crop&w=1534&q=80");
   background-repeat: no-repeat;
+  filter: blur(0px);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
@@ -6432,7 +6440,7 @@ body {
   z-index: -100; }
 
 .home-frame {
-  padding: 20%;
+  padding-top: 25%;
   color: white; }
 
 .card {
@@ -6447,6 +6455,11 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
     margin-left: 20%;
     margin-right: 20%; }
+
+#root > div > div.container > div > div > a > h1 {
+  font-size: 500%;
+  font-family: 'Rock Salt', cursive;
+  color: white; }
 
 .main-div {
   height: 100%;

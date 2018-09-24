@@ -35,7 +35,11 @@ export default class MyNav extends Component {
       <div>
         <Navbar dark expand="sm" className="IronNavbar">
           <Container>
-            <NavbarBrand style={{ color: `${this.props.color}` }} href="/">
+            <NavbarBrand
+              className="essential"
+              style={{ color: `${this.props.color}` }}
+              href="/"
+            >
               Cerulean
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
@@ -61,7 +65,6 @@ export default class MyNav extends Component {
                     </NavItem>
                   )}
                 </NavItem>
-                {/* <Link to="/secret"> Secret</Link> */}
               </Nav>
             </Collapse>
           </Container>

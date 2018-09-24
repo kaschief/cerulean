@@ -66,7 +66,13 @@ class App extends Component {
                 />
               )}
             />
-            <Route exact path="/favorites" component={Favorites} />
+            <Route
+              exact
+              path="/favorites"
+              render={props => (
+                <Favorites {...props} onHover={this.changeCerulean} />
+              )}
+            />
           </Switch>
         </Container>
       </div>
