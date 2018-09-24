@@ -41,7 +41,8 @@ class Details extends Component {
       return c.hex === `${this.state.hex}`;
     }).rgb;
 
-    console.log('this is the MEANING------>', family, meaning);
+    //console.log('THIS IS RGB --->', rgb);
+    //console.log('this is the MEANING------>', family, meaning);
 
     this.setState({
       name: name,
@@ -49,8 +50,12 @@ class Details extends Component {
       family: family,
       meaning: meaning
     });
+
+    //console.log('HERE IS THE STATE', this.state);
+    //console.log('THIS IS STATE RGB --->', this.state.rgb);
   };
   render() {
+    console.log('HERE IS THE STATE', typeof this.state.rgb.r);
     let r = this.state.rgb.r;
     let g = this.state.rgb.g;
     let b = this.state.rgb.b;

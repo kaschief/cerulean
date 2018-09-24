@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './Button';
 
 import {
   Card,
@@ -6,8 +7,8 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
-  Button
+  CardSubtitle
+  //Button
 } from 'reactstrap';
 import tinycolor from 'tinycolor2';
 
@@ -18,26 +19,28 @@ export default class Info extends Component {
 
     return (
       <div>
-        <Card>
+        <Card style={{ backgroundColor: '#F7F7F7', color: 'black' }}>
           <CardBody>
             {/* <CardTitle>More about {this.props.name}</CardTitle> */}
             {this.props.meaning.length > 0 && (
-              <CardSubtitle>
-                Did you know that {this.props.name} is part of the{' '}
-                {this.props.family} family of colors?
-              </CardSubtitle>
-            )}
-            <div>
-              <hr />
-            </div>
-
-            {this.props.meaning.length > 0 && (
-              <CardText>{this.props.meaning}</CardText>
-            )}
-            <div>
               <div>
-                <hr />
-              </div>{' '}
+                <CardSubtitle>
+                  Did you know that {this.props.name} is part of the broader
+                  family of {this.props.family} colors?
+                </CardSubtitle>
+                <div>
+                  <hr />
+                </div>
+                <CardText className="meaning-text">
+                  {this.props.meaning}
+                </CardText>
+                <div>
+                  <hr />
+                </div>{' '}
+              </div>
+            )}
+
+            <div>
               This is a {dark ? 'DARK ' : 'LIGHT '}
               color.
             </div>
@@ -56,7 +59,8 @@ export default class Info extends Component {
                 </tr>
               </tbody>
             </Table>
-            <Button>Save</Button>
+
+            <Button className="save" text={'Save'} />
           </CardBody>
         </Card>
       </div>

@@ -3,8 +3,15 @@ import tinycolor from 'tinycolor2';
 import { Container, Row, Col } from 'reactstrap';
 import Box from './Box';
 import allcolors from '../allcolors.json';
+import axios from 'axios';
 
 class Dimensions extends Component {
+  componentDidMount() {
+    axios.get('http://thecolorapi.com//id?hex=24B1E0').then(response => {
+      console.log('INSIDE COLOR API---->', response);
+    });
+  }
+
   render() {
     let color = tinycolor(this.props.hex);
     let rgb = color.toRgb();
@@ -14,10 +21,6 @@ class Dimensions extends Component {
 
     //console.log('FOUND THE NAME------>', name);
 
-    console.log('rgb: ', rgb);
-    // console.log('name: ', name);
-    //console.log('INSIDE TINY COLOR------>', color.toName());
-
     let analagous = tinycolor(this.props.hex)
       .analogous()
       .map(function(t) {
@@ -26,21 +29,13 @@ class Dimensions extends Component {
 
     console.log('ANALAGOUS---->', analagous);
 
-    let triad = tinycolor(this.props.hex)
-      .triad()
-      .map(function(t) {
-        return t.toHexString();
-      });
-
-    console.log('TRIAD---->', triad);
-
     let tetrad = tinycolor(this.props.hex)
       .tetrad()
       .map(function(t) {
         return t.toHexString();
       });
 
-    console.log('TETRAD---->', tetrad);
+    //console.log('TETRAD---->', tetrad);
 
     let splitcomplement = tinycolor(this.props.hex)
       .splitcomplement()
@@ -63,7 +58,7 @@ class Dimensions extends Component {
 
           <Col sm="9">
             {analagous.map(c => {
-              console.log('C INSIDE OF ANALAGOUS---->', c);
+              //console.log('C INSIDE OF ANALAGOUS---->', c);
               {
                 /* let name = allcolors.filter(color => {
                 return color.hex === c;
@@ -91,7 +86,7 @@ class Dimensions extends Component {
           </Col>
           <Col sm="9">
             {tetrad.map(c => {
-              console.log('C INSIDE OF ANALAGOUS---->', c);
+              //console.log('C INSIDE OF ANALAGOUS---->', c);
               {
                 /* let name = allcolors.filter(color => {
                 return color.hex === c;
@@ -119,7 +114,7 @@ class Dimensions extends Component {
           </Col>
           <Col sm="9">
             {splitcomplement.map(c => {
-              console.log('C INSIDE OF ANALAGOUS---->', c);
+              //console.log('C INSIDE OF ANALAGOUS---->', c);
               {
                 /* let name = allcolors.filter(color => {
                 return color.hex === c;
@@ -147,7 +142,7 @@ class Dimensions extends Component {
           </Col>
           <Col sm="9">
             {monochromatic.map(c => {
-              console.log('C INSIDE OF ANALAGOUS---->', c);
+              //console.log('C INSIDE OF ANALAGOUS---->', c);
               {
                 /* let name = allcolors.filter(color => {
                 return color.hex === c;

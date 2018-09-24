@@ -6,36 +6,41 @@ class Range extends Component {
   constructor(props) {
     super(props);
 
+    console.log(this.props);
     this.state = {
       value: ''
     };
-    //console.log('FIRST RANGE----->', this.state.value, this.props);
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.setState({
       value: this.props.value
     });
 
-    //console.log('NOW IT IS', this.state.value);
-  };
+    console.log('cdm', this.props);
+  }
 
   valueChangeHandle = event => {
     this.setState({
-      value: event.target.value
+      value: event
     });
   };
 
   render() {
-    //console.log('THIRD RANGE------>', this.props.value);
-    return (
-      <InputRange
-        maxValue={255}
-        minValue={0}
-        value={this.state.value}
-        onChange={e => this.valueChangeHandle(e)}
-      />
-    );
+    let range;
+    if (!this.props) {
+      range = <p>nothing here...</p>;
+    } else {
+      range = (
+        <InputRange
+          maxValue={255}
+          minValue={0}
+          value={this.state.value}
+          onChange={e => this.valueChangeHandle(e)}
+        />
+      );
+    }
+    return <div>{range}</div>;
   }
 }
 

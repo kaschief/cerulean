@@ -6472,6 +6472,10 @@ body {
 .dimensions-text {
   padding-top: 15px; }
 
+.meaning-text {
+  text-align: center;
+  padding: 2%; }
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {

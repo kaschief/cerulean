@@ -38,11 +38,23 @@ export default class Colors extends Component {
         }
         this.setState({
           displayedColors: this.state.maincolors
-            .filter(c => c.name.toLowerCase().includes(lowerSearch))
+            .filter(
+              c =>
+                c.name.toLowerCase().includes(lowerSearch) ||
+                c.hex.toLowerCase().includes(lowerSearch)
+            )
             .map(c => {
               let score = 0;
-              if (c.name.toLowerCase() === lowerSearch) score = 100;
-              if (c.name.toLowerCase().startsWith(lowerSearch)) score = 50;
+              if (
+                c.name.toLowerCase() === lowerSearch ||
+                c.hex.toLowerCase() === lowerSearch
+              )
+                score = 100;
+              if (
+                c.name.toLowerCase().startsWith(lowerSearch) ||
+                c.hex.toLowerCase().startsWith(lowerSearch)
+              )
+                score = 50;
               return { ...c, score };
             })
             .sort((a, b) => b.score - a.score)
