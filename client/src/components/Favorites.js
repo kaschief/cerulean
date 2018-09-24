@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import allcolors from '../allcolors.json';
 import Meanings from '../meanings.json';
 import Info from './Info';
-import Range from './Range';
 import axios from 'axios';
 import api from '../api';
 
