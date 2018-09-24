@@ -6476,6 +6476,13 @@ body {
   text-align: center;
   padding: 2%; }
 
+.my-colors {
+  padding: 1%;
+  border: 1px solid black;
+  text-align: center;
+  /* width: 50%; */
+  justify-content: center; }
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {

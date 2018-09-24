@@ -21,7 +21,6 @@ export default class Info extends Component {
   }
 
   handleSubmit() {
-    console.log('Button clicked!!!');
     let newColor = {
       hex: this.props.hex,
       name: this.props.name,
@@ -33,15 +32,12 @@ export default class Info extends Component {
       splitcomplement: this.props.splitcomplement,
       monochromatic: this.props.monochromatic
     };
-
-    console.log('this is the new color------>', newColor);
     api.addColor(newColor).then(data => {
       console.log('adding the new color', data);
     });
   }
 
   render() {
-    //console.log('MY INFO PROPS---->', this.props);
     let color = tinycolor(this.props.hex);
     let dark = color.isDark();
     return (

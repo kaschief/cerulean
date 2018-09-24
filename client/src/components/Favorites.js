@@ -10,24 +10,45 @@ export default class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favorites: []
+      hex: '',
+      name: '',
+      rgb: {},
+      family: '',
+      meaning: '',
+      analagous: [],
+      tetrad: [],
+      splitcomplement: [],
+      monochromatic: []
     };
   }
   componentDidMount(props) {
-    api.getColors().then(data => {
-      console.log('getting the colors data', data);
+    api.getColors().then(colors => {
+      console.log('getting the colors from the API', colors);
       this.setState({
-        favorites: data
+        hex: colors.hex,
+        name: colors.name,
+        rgb: colors.rgb,
+        meaning: colors.meaning,
+        family: colors.family,
+        analagous: colors.analagous,
+        tetrad: colors.tetrad,
+        splitcomplement: colors.splitcomplement,
+        monochromatic: colors.monochromatic
       });
+      console.log('state was set', this.state);
     });
   }
   render() {
+    console.log('AFTER IT MOUNTS', this.state);
     return (
       <div className="Favorite">
-        <h2>Favorites Page</h2>
-        {this.state.favorites.map(c => {
+        <div className="my-colors">
+          <h2>My Favorite Colors</h2>
+        </div>
+        {/* {this.state.favorites.map(c => {
           return <div>{c.hex}</div>;
-        })}
+        })} */}
+
         {/* <div className="Colors text-center container">
         <div className="Group">
           {this.state.displayedColors.map(c => (
