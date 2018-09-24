@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Secret from './components/Secret';
 import Logout from './components/Logout';
 import Details from './components/Details';
+import Favorites from './components/Favorites';
 
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
@@ -68,6 +69,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route exact path="/favorites" component={Favorites} />
           </Switch>
         </Container>
       </div>

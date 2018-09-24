@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
-
+import { Link } from 'react-router-dom';
 import {
   Card,
   Table,
@@ -21,7 +21,6 @@ export default class Info extends Component {
       <div>
         <Card style={{ backgroundColor: '#F7F7F7', color: 'black' }}>
           <CardBody>
-            {/* <CardTitle>More about {this.props.name}</CardTitle> */}
             {this.props.meaning.length > 0 && (
               <div>
                 <CardSubtitle>
@@ -55,12 +54,16 @@ export default class Info extends Component {
                 </tr>
                 <tr>
                   <th scope="row">RGB</th>
-                  <td>{`${this.props.r}, ${this.props.g}, ${this.props.b}`}</td>
+                  <td>{`${this.props.rgb.r}, ${this.props.rgb.g}, ${
+                    this.props.rgb.b
+                  }`}</td>
                 </tr>
               </tbody>
             </Table>
 
-            <Button className="save" text={'Save'} />
+            <Link to={'/favorites/:id'}>
+              <Button className="save" text={'Save'} Link />
+            </Link>
           </CardBody>
         </Card>
       </div>

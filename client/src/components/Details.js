@@ -3,6 +3,7 @@ import allcolors from '../allcolors.json';
 import Meanings from '../meanings.json';
 import Info from './Info';
 import Range from './Range';
+import tinycolor from 'tinycolor2';
 import Dimensions from './Dimensions';
 
 class Details extends Component {
@@ -13,15 +14,21 @@ class Details extends Component {
       name: '',
       rgb: {},
       family: '',
-      meaning: ''
+      meaning: '',
+      analagous: [],
+      tetrad: [],
+      splitcomplement: [],
+      monochromatic: []
     };
   }
 
   componentDidMount = () => {
+    //find name
     let name = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
     }).name;
 
+    //find meaning & family
     let meaning;
     let family;
 
@@ -37,28 +44,53 @@ class Details extends Component {
       family = '';
     }
 
+    //get RGB
     let rgb = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
     }).rgb;
 
-    //console.log('THIS IS RGB --->', rgb);
-    //console.log('this is the MEANING------>', family, meaning);
+    //get analagous, tetrad, splitcomplement, monochromatic
+    let color = tinycolor(this.state.hex);
+    // let rgb = color.toRgb();
+
+    let analagous = tinycolor(this.state.hex)
+      .analogous()
+      .map(function(t) {
+        return t.toHexString();
+      });
+
+    let tetrad = tinycolor(this.state.hex)
+      .tetrad()
+      .map(function(t) {
+        return t.toHexString();
+      });
+
+    let splitcomplement = tinycolor(this.state.hex)
+      .splitcomplement()
+      .map(function(t) {
+        return t.toHexString();
+      });
+
+    let monochromatic = tinycolor(this.state.hex)
+      .monochromatic()
+      .map(function(t) {
+        return t.toHexString();
+      });
 
     this.setState({
       name: name,
       rgb: rgb,
       family: family,
-      meaning: meaning
+      meaning: meaning,
+      analagous: analagous,
+      tetrad: tetrad,
+      splitcomplement: splitcomplement,
+      monochromatic: monochromatic
     });
-
-    //console.log('HERE IS THE STATE', this.state);
-    //console.log('THIS IS STATE RGB --->', this.state.rgb);
   };
   render() {
-    console.log('HERE IS THE STATE', typeof this.state.rgb.r);
-    let r = this.state.rgb.r;
-    let g = this.state.rgb.g;
-    let b = this.state.rgb.b;
+    //console.log('HERE IS THE STATE', typeof this.state.rgb.r);
+    //console.log('INSIDE DETAILS RENDER--------->', this.state);
     return (
       <div className="Details text-center">
         <div className="title" style={{ backgroundColor: `${this.state.hex}` }}>
@@ -68,9 +100,7 @@ class Details extends Component {
           <Info
             hex={this.state.hex}
             name={this.state.name}
-            r={r}
-            g={g}
-            b={b}
+            rgb={this.state.rgb}
             meaning={this.state.meaning}
             family={this.state.family}
           />
@@ -78,26 +108,18 @@ class Details extends Component {
         <Dimensions
           className="title dimensions-box"
           hex={this.state.hex}
+          name={this.state.name}
+          rgb={this.state.rgb}
+          meaning={this.state.meaning}
+          analagous={this.state.analagous}
+          tetrad={this.state.tetrad}
+          splitcomplement={this.state.splitcomplement}
+          monochromatic={this.state.monochromatic}
           onHover={this.props.onHover}
         />
-        <div className="title slider-div">
-          <p>Slide to change color</p>
-          <Range className="slider" value={r} />
-          <Range className="slider" value={g} />
-          <Range className="slider" value={b} />
-        </div>
       </div>
     );
   }
 }
 
 export default Details;
-
-// const mainStyle = {
-//   //backgroundColor: `${this.state.color}`,
-//   height: '90vh',
-//   //width: '0vw'
-//   border: '1px solid black',
-//   borderRadius: '25px',
-//   marginTop: '5%'
-// };

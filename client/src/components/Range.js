@@ -1,47 +1,21 @@
 import React, { Component } from 'react';
-import InputRange from 'react-input-range';
-import 'react-input-range/lib/css/index.css';
+import { SketchPicker } from 'react-color';
 
-class Range extends Component {
-  constructor(props) {
-    super(props);
+export default class Range extends Component {
+  state = {
+    background: this.props.hex
+  };
 
-    console.log(this.props);
-    this.state = {
-      value: ''
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      value: this.props.value
-    });
-
-    console.log('cdm', this.props);
-  }
-
-  valueChangeHandle = event => {
-    this.setState({
-      value: event
-    });
+  handleChangeComplete = color => {
+    this.setState({ background: color.hex });
   };
 
   render() {
-    let range;
-    if (!this.props) {
-      range = <p>nothing here...</p>;
-    } else {
-      range = (
-        <InputRange
-          maxValue={255}
-          minValue={0}
-          value={this.state.value}
-          onChange={e => this.valueChangeHandle(e)}
-        />
-      );
-    }
-    return <div>{range}</div>;
+    return (
+      <SketchPicker
+        color={this.state.background}
+        onChangeComplete={this.handleChangeComplete}
+      />
+    );
   }
 }
-
-export default Range;
