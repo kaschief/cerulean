@@ -10,14 +10,14 @@ export default class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favorite: 'Hello, welcome to the favorites page'
+      favorites: []
     };
   }
   componentDidMount(props) {
     api.getColors().then(data => {
       console.log('getting the colors data', data);
       this.setState({
-        favorites: 'Got the colors'
+        favorites: data
       });
     });
   }
@@ -25,7 +25,9 @@ export default class Favorites extends Component {
     return (
       <div className="Favorite">
         <h2>Favorites Page</h2>
-        {this.state.favorite}
+        {this.state.favorites.map(c => {
+          return <div>{c.hex}</div>;
+        })}
         {/* <div className="Colors text-center container">
         <div className="Group">
           {this.state.displayedColors.map(c => (

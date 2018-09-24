@@ -15,8 +15,13 @@ import tinycolor from 'tinycolor2';
 
 export default class Info extends Component {
   //event to submit -- call API here
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  handleSubmit = () => {
+  handleSubmit() {
+    console.log('Button clicked!!!');
     let newColor = {
       hex: this.props.hex,
       name: this.props.name,
@@ -33,13 +38,12 @@ export default class Info extends Component {
     api.addColor(newColor).then(data => {
       console.log('adding the new color', data);
     });
-  };
+  }
 
   render() {
     //console.log('MY INFO PROPS---->', this.props);
     let color = tinycolor(this.props.hex);
     let dark = color.isDark();
-
     return (
       <div>
         <Card style={{ backgroundColor: '#F7F7F7', color: 'black' }}>
@@ -87,7 +91,7 @@ export default class Info extends Component {
             <Button
               className="save"
               text={'Save'}
-              onClick={() => this.handleSubmit()}
+              onClick={this.handleSubmit}
             />
             {/* <Link to={'/favorites/:id'}>
             </Link> */}

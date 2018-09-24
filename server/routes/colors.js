@@ -24,11 +24,13 @@ router.post('/', isLoggedIn, (req, res, next) => {
     analagous: req.body.analagous,
     tetrad: req.body.tetrad,
     splitcomplement: req.body.splitcomplement,
-    monochromatic: req.body.monochromatic
+    monochromatic: req.body.monochromatic,
+    _owner: req.user.id,
+    isFavorite: true
   };
   Color.create(newColor)
     .then(color => {
-      console.log('color is created', newColor);
+      console.log('color is created', color);
       res.json({
         success: true,
         color
