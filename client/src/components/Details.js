@@ -103,6 +103,10 @@ class Details extends Component {
             rgb={this.state.rgb}
             meaning={this.state.meaning}
             family={this.state.family}
+            analagous={this.state.analagous}
+            tetrad={this.state.tetrad}
+            splitcomplement={this.state.splitcomplement}
+            monochromatic={this.state.monochromatic}
           />
         </div>
         <Dimensions

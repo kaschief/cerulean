@@ -22,7 +22,7 @@ export default class Login extends Component {
       .login(this.state.username, this.state.password)
       .then(result => {
         console.log('LOGIN SUCCESS!');
-        this.props.history.push('/'); // Redirect to the home page
+        this.props.history.push('/favorites'); // Redirect to the home page
       })
       .catch(err => {
         console.log('LOGIN ERROR');
@@ -31,7 +31,32 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="limiter">
+      <div className="Login text-center">
+        <h2>Login</h2>
+        <form>
+          Username:{' '}
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={e => this.handleInputChange('username', e)}
+          />{' '}
+          <br />
+          Password:{' '}
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={e => this.handleInputChange('password', e)}
+          />{' '}
+          <br />
+          <button onClick={e => this.handleClick(e)}>Login</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+{
+  /* <div className="limiter">
         <div
           class="container-login100"
           style={{ backgroundImage: `{url('images/bg-01.jpg') }` }}
@@ -95,30 +120,5 @@ export default class Login extends Component {
             </form>
           </div>
         </div>
-      </div>
-    );
-  }
-}
-
-{
-  /* <div className="Login text-center">
-        <h2>Login</h2>
-        <form>
-          Username:{' '}
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={e => this.handleInputChange('username', e)}
-          />{' '}
-          <br />
-          Password:{' '}
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={e => this.handleInputChange('password', e)}
-          />{' '}
-          <br />
-          <button onClick={e => this.handleClick(e)}>Login</button>
-        </form>
       </div> */
 }

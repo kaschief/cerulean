@@ -26,6 +26,10 @@ export default class MyNav extends Component {
     });
   }
 
+  handleLogoutClick(e) {
+    api.logout();
+  }
+
   render() {
     return (
       <div>
@@ -39,12 +43,18 @@ export default class MyNav extends Component {
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   {!api.isLoggedIn() && <Link to="/login">Login</Link>}
-                  {api.isLoggedIn() && <Link to="/signup">Signup</Link>}
+                  {!api.isLoggedIn() && <Link to="/signup">Signup</Link>}
                   {api.isLoggedIn() && (
-                    <NavLink to="/" onClick={e => this.handleLogoutClick(e)}>
+                    <Link to="/colors" onClick={e => this.handleLogoutClick(e)}>
                       Logout
-                    </NavLink>
+                    </Link>
                   )}
+
+                  {/* {api.isLoggedIn() && (
+                    <Link to="/logout" onClick={e => this.handleLogoutClick(e)}>
+                      Logout
+                    </Link>
+                  )} */}
                 </NavItem>
                 <NavItem>
                   <NavLink activeClassName="active" to="/colors">
@@ -55,10 +65,7 @@ export default class MyNav extends Component {
                   <Link to="/signup"> Signup</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/login">Login</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/logout"> Logout</Link>
+                  <Link to="/favorites">Favorites</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/secret"> Secret</Link>

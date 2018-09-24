@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
+import api from '../api';
+
 import {
   Card,
   Table,
   CardText,
   CardBody,
-  CardTitle,
   CardSubtitle
   //Button
 } from 'reactstrap';
 import tinycolor from 'tinycolor2';
 
 export default class Info extends Component {
+  //event to submit -- call API here
+
+  handleSubmit = () => {
+    let newColor = {
+      hex: this.props.hex,
+      name: this.props.name,
+      rgb: this.props.rgb,
+      meaning: this.props.meaning,
+      family: this.props.family,
+      analagous: this.props.analagous,
+      tetrad: this.props.tetrad,
+      splitcomplement: this.props.splitcomplement,
+      monochromatic: this.props.monochromatic
+    };
+
+    api.addColor({ newColor }).then(data => {
+      console.log('adding the new color', data);
+    });
+  };
+
   render() {
+    console.log('MY INFO PROPS---->', this.props);
     let color = tinycolor(this.props.hex);
     let dark = color.isDark();
 
@@ -61,9 +83,13 @@ export default class Info extends Component {
               </tbody>
             </Table>
 
-            <Link to={'/favorites/:id'}>
-              <Button className="save" text={'Save'} Link />
-            </Link>
+            <Button
+              className="save"
+              text={'Save'}
+              onClick={this.handleSubmit()}
+            />
+            {/* <Link to={'/favorites/:id'}>
+            </Link> */}
           </CardBody>
         </Card>
       </div>

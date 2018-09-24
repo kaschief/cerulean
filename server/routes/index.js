@@ -11,4 +11,3 @@ router.get('/secret', isLoggedIn, (req, res, next) => {
 });
 
 module.exports = router;
-``;

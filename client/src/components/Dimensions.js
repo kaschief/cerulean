@@ -17,7 +17,6 @@ class Dimensions extends Component {
             {this.props.analagous.map(c => {
               let color = tinycolor(c);
               let rgb = color.toRgb();
-              console.log('C INSIDE OF ANALAGOUS---->', c, color, rgb);
               return (
                 <Box
                   key={c}

@@ -38,28 +38,58 @@ User.deleteMany()
 
         let newColorsArray = [
           {
-            name: "Squid's Ink",
-            hex: '#4d4e5c',
-            rgb: {
-              r: 77,
-              g: 78,
-              b: 92
-            },
-            related: [],
+            hex: '#3d1c02',
+            name: '90% Cocoa',
+            rgb: { r: 61, g: 28, b: 2 },
+            meaning: '',
+            family: '',
+            analagous: [
+              '#3d1c02',
+              '#3d0402',
+              '#3d1002',
+              '#3d1c02',
+              '#3d2802',
+              '#3d3402'
+            ],
+            tetrad: ['#3d1c02', '#053d02', '#02233d', '#39023d'],
+            splitcomplement: ['#3d1c02', '#173d02', '#04023d'],
+            monochromatic: [
+              '#3d1c02',
+              '#672f03',
+              '#924305',
+              '#bc5706',
+              '#e76a08',
+              '#120801'
+            ],
             _owner: id,
-            isFavorite: false
+            isFavorite: true
           },
           {
-            name: "St. Patrick's Blue",
-            hex: '#23297a',
-            rgb: {
-              r: 35,
-              g: 41,
-              b: 122
-            },
-            related: [],
+            hex: '#88ffcc',
+            name: 'A State of Mint',
+            rgb: { r: 136, g: 255, b: 204 },
+            meaning: '',
+            family: '',
+            analagous: [
+              '#88ffcc',
+              '#88ff9c',
+              '#88ffb4',
+              '#88ffcc',
+              '#88ffe4',
+              '#88fffc'
+            ],
+            tetrad: ['#88ffcc', '#9088ff', '#ff88bb', '#f6ff88'],
+            splitcomplement: ['#88ffcc', '#88a3ff', '#ff9c88'],
+            monochromatic: [
+              '#88ffcc',
+              '#172a22',
+              '#2d5544',
+              '#448066',
+              '#5baa88',
+              '#71d4aa'
+            ],
             _owner: id,
-            isFavorite: false
+            isFavorite: true
           }
         ];
 

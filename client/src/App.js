@@ -25,8 +25,7 @@ class App extends Component {
   }
 
   changeCerulean(name, hex, rgb) {
-    //console.log('changing the hex code fo mainColor-->', color);
-    console.log('Current color is -->', name, rgb);
+    //console.log('Current color is -->', name, rgb);
     this.setState({
       name: name,
       hex: hex,
@@ -56,7 +55,7 @@ class App extends Component {
               )}
             />
             <Route exact path="/secret" component={Secret} />
-            <Route exact path="/logout" component={Logout} />
+            {/* <Route exact path="/logout" component={Logout} /> */}
             <Route
               path="/colors/:id"
               render={props => (
