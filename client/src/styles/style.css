@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Rock+Salt|Nothing+You+Could+Do");
+@import url("https://fonts.googleapis.com/css?family=Dosis|Rock+Salt|Nothing+You+Could+Do");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6322,6 +6322,8 @@ a.text-dark:hover, a.text-dark:focus {
     color: white;
     padding-left: 5px;
     padding-right: 5px; }
+  .IronNavbar a:hover {
+    color: red; }
 
 .Logo {
   color: blue; }
@@ -6353,7 +6355,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'Amatic SC', cursive; }
+  font-family: 'Dosis', sans-serif; }
 
 @keyframes bounce {
   from {
@@ -6456,7 +6458,8 @@ body {
     margin-left: 20%;
     margin-right: 20%; }
 
-#root > div > div.container > div > div > a > h1 {
+#root > div > div.container > div > div > div > div > a > h1 {
+  padding-top: 5%;
   font-size: 500%;
   font-family: 'Rock Salt', cursive;
   color: white; }
@@ -6496,24 +6499,19 @@ body {
   /* width: 50%; */
   justify-content: center; }
 
+#root > div > div.container > div > div > div > div > form > div.container-login100-form-btn > button {
+  padding-left: 35%;
+  border: 2px solid #f7f7f7;
+  padding-right: 35%;
+  text-align: center;
+  border-radius: 25px;
+  margin-left: 8%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: white; }
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-@font-face {
-  font-family: Poppins-Regular;
-  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url("../fonts/poppins/Poppins-Medium.ttf"); }
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url("../fonts/poppins/Poppins-Bold.ttf"); }
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url("../fonts/poppins/Poppins-SemiBold.ttf"); }
-
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
@@ -6521,23 +6519,7 @@ body {
   padding: 0px;
   box-sizing: border-box; }
 
-body,
-html {
-  height: 100%;
-  font-family: Poppins-Regular, sans-serif; }
-
 /*---------------------------------------------*/
-a {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #666666;
-  margin: 0px;
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s; }
-
 a:focus {
   outline: none !important; }
 
@@ -6679,7 +6661,8 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.9); }
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10%; }
 
 .wrap-login100 {
   width: 500px;
@@ -6720,6 +6703,7 @@ iframe {
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
+  padding-bottom: 10%;
   display: block; }
 
 /*------------------------------------------------------------------

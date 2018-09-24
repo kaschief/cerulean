@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 export default class Home extends Component {
   constructor(props) {
@@ -10,14 +10,18 @@ export default class Home extends Component {
   render() {
     return (
       <div className="Home text-center">
-        <div className="home-frame">
-          <Link to={'/colors'}>
-            <h1>Cerulean</h1>
-          </Link>
-          <p className="lead">
-            Discover Your <span className="color-title">Colors</span>
-          </p>
-        </div>
+        <Container>
+          <Row className="home-frame">
+            <Col lg="12">
+              <Link to={'/colors'}>
+                <h1>Cerulean</h1>
+              </Link>
+              <p className="lead">
+                Discover Your <span className="color-title">Colors</span>
+              </p>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

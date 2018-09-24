@@ -50,7 +50,7 @@ export default class MyNav extends Component {
                     Colors
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className="hovered">
                   {!api.isLoggedIn() && <Link to="/login">Login</Link>}
                   {!api.isLoggedIn() && <Link to="/signup">Signup</Link>}
                   {api.isLoggedIn() && (

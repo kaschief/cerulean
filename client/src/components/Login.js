@@ -31,7 +31,79 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login text-center">
+      <div>
+        <div class="limiter">
+          <div class="container-login100">
+            <div class="wrap-login100">
+              <form class="login100-form validate-form">
+                <span class="login100-form-title p-b-34">Account Login</span>
+
+                <div
+                  class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
+                  data-validate="Type user name"
+                >
+                  <input
+                    id="first-name"
+                    class="input100"
+                    type="text"
+                    name="username"
+                    placeholder="User name"
+                    value={this.state.usename}
+                    onChange={e => this.handleInputChange('username', e)}
+                  />
+                  <span class="focus-input100" />
+                </div>
+                <div
+                  class="wrap-input100 rs2-wrap-input100 validate-input m-b-20"
+                  data-validate="Type password"
+                >
+                  <input
+                    class="input100"
+                    type="password"
+                    name="pass"
+                    placeholder="password"
+                    value={this.state.password}
+                    onChange={e => this.handleInputChange('password', e)}
+                  />
+                  <span class="focus-input100" />
+                </div>
+
+                <div class="container-login100-form-btn">
+                  <button
+                    class="login100-form-btn"
+                    onClick={e => this.handleClick(e)}
+                  >
+                    Sign in
+                  </button>
+                </div>
+
+                {/* <div class="w-full text-center p-t-27 p-b-239">
+                  <span class="txt1">Forgot</span>
+
+                  <a href="#" class="txt2">
+                    User name / password?
+                  </a>
+                </div> */}
+
+                <div class="w-full text-center">
+                  <a href="#" class="txt3">
+                    Sign Up
+                  </a>
+                </div>
+              </form>
+
+              <div
+                class="login100-more"
+                //style={{backgroundImage: "url('images/bg-01.jpg'"}"}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+
+    {
+      /* <div className="Login text-center">
         <h2>Login</h2>
         <form>
           Username:{' '}
@@ -50,8 +122,8 @@ export default class Login extends Component {
           <br />
           <button onClick={e => this.handleClick(e)}>Login</button>
         </form>
-      </div>
-    );
+      </div> */
+    }
   }
 }
 
