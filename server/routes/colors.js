@@ -16,22 +16,28 @@ router.get('/', isLoggedIn, (req, res, next) => {
 // Route to add a color
 router.post('/', isLoggedIn, (req, res, next) => {
   let newColor = {
-    name: req.body.name,
     hex: req.body.hex,
+    name: req.body.name,
     rgb: req.body.rgb,
-    related: req.body.related,
-    _owner: req.user.id,
-    isFavorite: req.body.isFavorite
+    meaning: req.body.meaning,
+    family: req.body.family,
+    analagous: req.body.analagous,
+    tetrad: req.body.tetrad,
+    splitcomplement: req.body.splitcomplement,
+    monochromatic: req.body.monochromatic
   };
   Color.create(newColor)
     .then(color => {
-      console.log('color is created');
+      console.log('color is created', newColor);
       res.json({
         success: true,
         color
       });
     })
-    .catch(err => next(err));
+    .catch(err => {
+      console.log('this is where the error is');
+      next(err);
+    });
 });
 
 //Route to get a single color

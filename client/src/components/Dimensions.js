@@ -3,7 +3,6 @@ import tinycolor from 'tinycolor2';
 import { Container, Row, Col } from 'reactstrap';
 import Box from './Box';
 import allcolors from '../allcolors.json';
-import axios from 'axios';
 
 class Dimensions extends Component {
   render() {

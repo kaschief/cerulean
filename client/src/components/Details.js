@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import allcolors from '../allcolors.json';
 import Meanings from '../meanings.json';
 import Info from './Info';
-import Range from './Range';
 import tinycolor from 'tinycolor2';
 import Dimensions from './Dimensions';
 
@@ -89,8 +88,6 @@ class Details extends Component {
     });
   };
   render() {
-    //console.log('HERE IS THE STATE', typeof this.state.rgb.r);
-    //console.log('INSIDE DETAILS RENDER--------->', this.state);
     return (
       <div className="Details text-center">
         <div className="title" style={{ backgroundColor: `${this.state.hex}` }}>

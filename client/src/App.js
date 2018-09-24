@@ -4,7 +4,6 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Secret from './components/Secret';
-import Logout from './components/Logout';
 import Details from './components/Details';
 import Favorites from './components/Favorites';
 
@@ -55,7 +54,6 @@ class App extends Component {
               )}
             />
             <Route exact path="/secret" component={Secret} />
-            {/* <Route exact path="/logout" component={Logout} /> */}
             <Route
               path="/colors/:id"
               render={props => (

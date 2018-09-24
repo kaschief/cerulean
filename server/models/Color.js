@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const colorSchema = new Schema({
   hex: {
-    type: String,
-    unique: true
+    type: String
+    //unique: true
   },
   name: {
     type: String

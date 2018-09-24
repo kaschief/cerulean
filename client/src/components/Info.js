@@ -29,13 +29,14 @@ export default class Info extends Component {
       monochromatic: this.props.monochromatic
     };
 
-    api.addColor({ newColor }).then(data => {
+    console.log('this is the new color------>', newColor);
+    api.addColor(newColor).then(data => {
       console.log('adding the new color', data);
     });
   };
 
   render() {
-    console.log('MY INFO PROPS---->', this.props);
+    //console.log('MY INFO PROPS---->', this.props);
     let color = tinycolor(this.props.hex);
     let dark = color.isDark();
 
@@ -86,7 +87,7 @@ export default class Info extends Component {
             <Button
               className="save"
               text={'Save'}
-              onClick={this.handleSubmit()}
+              onClick={() => this.handleSubmit()}
             />
             {/* <Link to={'/favorites/:id'}>
             </Link> */}
