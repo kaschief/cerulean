@@ -9,30 +9,14 @@ export default class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hex: '',
-      name: '',
-      rgb: {},
-      family: '',
-      meaning: '',
-      analagous: [],
-      tetrad: [],
-      splitcomplement: [],
-      monochromatic: []
+      colors: []
     };
   }
   componentDidMount(props) {
     api.getColors().then(colors => {
       console.log('getting the colors from the API', colors);
       this.setState({
-        hex: colors.hex,
-        name: colors.name,
-        rgb: colors.rgb,
-        meaning: colors.meaning,
-        family: colors.family,
-        analagous: colors.analagous,
-        tetrad: colors.tetrad,
-        splitcomplement: colors.splitcomplement,
-        monochromatic: colors.monochromatic
+        colors: colors
       });
       console.log('state was set', this.state);
     });

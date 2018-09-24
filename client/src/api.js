@@ -72,9 +72,8 @@ export default {
   },
 
   logout() {
-    return service.get('/auth/logout').then(res => {
-      localStorage.removeItem('user');
-    });
+    localStorage.removeItem('user');
+    return service.get('/auth/logout').then(res => {});
   },
 
   loadUser() {

@@ -42,34 +42,26 @@ export default class MyNav extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  {!api.isLoggedIn() && <Link to="/login">Login</Link>}
-                  {!api.isLoggedIn() && <Link to="/signup">Signup</Link>}
-                  {api.isLoggedIn() && (
-                    <Link to="/colors" onClick={e => this.handleLogoutClick(e)}>
-                      Logout
-                    </Link>
-                  )}
-
-                  {/* {api.isLoggedIn() && (
-                    <Link to="/logout" onClick={e => this.handleLogoutClick(e)}>
-                      Logout
-                    </Link>
-                  )} */}
-                </NavItem>
-                <NavItem>
                   <NavLink activeClassName="active" to="/colors">
                     Colors
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <Link to="/signup"> Signup</Link>
+                  {!api.isLoggedIn() && <Link to="/login">Login</Link>}
+                  {!api.isLoggedIn() && <Link to="/signup">Signup</Link>}
+                  {api.isLoggedIn() && (
+                    <NavItem>
+                      <Link to="/favorites">Favorites</Link>
+                      <Link
+                        to="/colors"
+                        onClick={e => this.handleLogoutClick(e)}
+                      >
+                        Logout
+                      </Link>
+                    </NavItem>
+                  )}
                 </NavItem>
-                <NavItem>
-                  <Link to="/favorites">Favorites</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/secret"> Secret</Link>
-                </NavItem>
+                {/* <Link to="/secret"> Secret</Link> */}
               </Nav>
             </Collapse>
           </Container>
