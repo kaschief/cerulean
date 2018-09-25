@@ -326,8 +326,18 @@ body {
 .drunk {
   margin-top: 20%;
   margin-left: 20%;
-  background-color: rgba(255, 0, 0, 1);
-  margin-right: 29%;
+  background-color: transparent;
+  margin-right: 25%;
+}
+
+.server {
+  background-image: url('https://images.unsplash.com/photo-1513560113100-8fa7a20b6ee6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=750b202785fdf2d8900234be270c8104&auto=format&fit=crop&w=967&q=80');
+  background-repeat: no-repeat;
+  filter: blur(0px);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Dosis', sans-serif;
 }
 
 /*//////////////////////////////////////////////////////////////////
