@@ -12,6 +12,14 @@ export default class Signup extends Component {
     };
   }
 
+  componentDidMount() {
+    document.body.className = 'pg1';
+  }
+
+  componentWillUnmount() {
+    document.body.className = 'body';
+  }
+
   handleInputChange = (field, event) => {
     this.setState({
       [field]: event.target.value

@@ -23,6 +23,7 @@ class Details extends Component {
   }
 
   componentDidMount = () => {
+    document.body.className = 'pg1';
     let color = tinycolor(this.state.hex);
 
     //find name
@@ -89,6 +90,11 @@ class Details extends Component {
       dark: color.isDark()
     });
   };
+
+  componentWillUnmount() {
+    document.body.className = 'body';
+  }
+
   render() {
     let style;
     this.state.dark
@@ -96,7 +102,6 @@ class Details extends Component {
           color: 'white'
         })
       : (style = { color: 'black' });
-    console.log('DARK STATE', this.state.dark);
     return (
       <div className="Details text-center">
         <div className="title" style={{ backgroundColor: `${this.state.hex}` }}>

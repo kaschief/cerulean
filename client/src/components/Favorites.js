@@ -12,11 +12,17 @@ export default class Favorites extends Component {
     };
   }
   componentDidMount(props) {
+    document.body.className = 'pg1';
+
     api.getColors().then(colors => {
       this.setState({
         colors: colors
       });
     });
+  }
+
+  componentWillUnmount() {
+    document.body.className = 'body';
   }
   render() {
     return (

@@ -6590,7 +6590,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0px; }
 
 p {
-  font-family: Poppins-Regular;
+  font-family: 'Dosis', sans-serif;
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -6681,7 +6681,7 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Poppins-Regular;
+  font-family: 'Dosis', sans-serif;
   font-size: 13px;
   color: #e5e5e5;
   line-height: 1.5; }
@@ -6755,7 +6755,7 @@ iframe {
   margin: 0 auto; }
 
 .login100-form-title {
-  font-family: Poppins-Medium;
+  font-family: 'Dosis', sans-serif;
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
@@ -6763,6 +6763,14 @@ iframe {
   text-transform: uppercase;
   padding-bottom: 10%;
   display: block; }
+
+.blackButton {
+  background-color: black;
+  color: white; }
+
+.whiteButton {
+  background-color: white;
+  color: black; }
 
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -6773,7 +6781,7 @@ iframe {
   margin-bottom: 30px; }
 
 .input100 {
-  font-family: Poppins-Regular;
+  font-family: 'Dosis', sans-serif;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
