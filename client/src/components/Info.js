@@ -14,7 +14,6 @@ import {
 import tinycolor from 'tinycolor2';
 
 export default class Info extends Component {
-  //event to submit -- call API here
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -84,13 +83,24 @@ export default class Info extends Component {
               </tbody>
             </Table>
 
-            <Button
-              className="save"
-              text={'Save'}
-              onClick={this.handleSubmit}
-            />
-            {/* <Link to={'/favorites/:id'}>
-            </Link> */}
+            {api.isLoggedIn() && (
+              <Button
+                className="save"
+                text={'Save'}
+                onClick={this.handleSubmit}
+              />
+            )}
+
+            {!api.isLoggedIn() && (
+              <Link to="/login">
+                {' '}
+                <Button
+                  className="save"
+                  text={'Login to Save'}
+                  //onClick={this.handleSubmit}
+                />
+              </Link>
+            )}
           </CardBody>
         </Card>
       </div>

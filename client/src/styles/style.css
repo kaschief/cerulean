@@ -6412,7 +6412,7 @@ body {
 
 .zoom:hover {
   transform: scale(4.5);
-  animation-delay: 0.4;
+  animation-delay: 0.3;
   z-index: 50;
   box-shadow: 13px 10px 106px 19px rgba(0, 0, 0, 0.66); }
   .zoom:hover .info {
@@ -6483,7 +6483,8 @@ body {
   margin-top: 25px; }
 
 .dimensions-box {
-  margin-top: 25px; }
+  margin-top: 25px;
+  background-color: #f7f7f7; }
 
 .dimensions-text {
   padding-top: 15px; }
@@ -6498,6 +6499,9 @@ body {
   text-align: center;
   /* width: 50%; */
   justify-content: center; }
+
+.Colors {
+  background-color: black; }
 
 #root > div > div.container > div > div > div > div > form > div.container-login100-form-btn > button {
   padding-left: 35%;

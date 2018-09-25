@@ -15,6 +15,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      imageURL:
+        'https://images.unsplash.com/photo-1463438690606-f6778b8c1d10?ixlib=rb-0.3.5&s=974c85db1b734c7d1630f3a32f0cc15a&auto=format&fit=crop&w=1534&q=80',
       name: '',
       hex: '',
       rgb: null
@@ -31,6 +33,12 @@ class App extends Component {
       rgb: rgb
     });
   }
+
+  imageChange() {
+    this.setState({
+      imageURL: ''
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -45,6 +53,7 @@ class App extends Component {
               path="/colors"
               render={props => (
                 <Colors
+                  class
                   {...props}
                   name={this.state.name}
                   hex={this.state.hex}

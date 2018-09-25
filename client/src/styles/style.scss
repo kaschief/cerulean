@@ -135,7 +135,7 @@ body {
 
 .zoom:hover {
   transform: scale(4.5);
-  animation-delay: 0.4;
+  animation-delay: 0.3;
   //opacity: 1;
   // filter: alpha(opacity=100); /* For IE8 and earlier */
   z-index: 50;
@@ -229,6 +229,7 @@ body {
 
 .dimensions-box {
   margin-top: 25px;
+  background-color: #f7f7f7;
 }
 
 .dimensions-text {
@@ -250,6 +251,9 @@ body {
   justify-content: center;
 }
 
+.Colors {
+  background-color: black;
+}
 #root
   > div
   > div.container
