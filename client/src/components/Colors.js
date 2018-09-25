@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Box from './Box';
 import Search from './Search';
 import allcolors from '../allcolors.json';
+// import tinycolor from 'tinycolor2';
 
 const MAX_RESULT = 200;
 
@@ -71,15 +72,18 @@ export default class Colors extends Component {
           change={e => this.inputHandle(e)}
         />
         <div className="Group">
-          {this.state.displayedColors.map(c => (
-            <Box
-              key={c.hex}
-              name={c.name}
-              hex={c.hex}
-              rgb={c.rgb}
-              onHover={this.props.onHover}
-            />
-          ))}
+          {this.state.displayedColors.map(c => {
+            return (
+              <Box
+                key={c.hex}
+                name={c.name}
+                hex={c.hex}
+                rgb={c.rgb}
+                //dark={this.props.dark}
+                onHover={this.props.onHover}
+              />
+            );
+          })}
         </div>
       </div>
     );

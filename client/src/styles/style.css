@@ -6402,6 +6402,9 @@ body {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 25px; }
 
+.Favorites {
+  background-color: black; }
+
 .zoom {
   padding: 100%;
   transition: transform 0.5s;
@@ -6431,8 +6434,11 @@ body {
     display: block; }
   .zoom:hover .innerText {
     background-color: rgba(0, 0, 0, 0.3); }
-    .zoom:hover .innerText p {
+    .zoom:hover .innerText .highlight {
       color: white;
+      font-size: 0.2rem; }
+    .zoom:hover .innerText .highdark {
+      color: black;
       font-size: 0.2rem; }
 
 .info {
@@ -6513,8 +6519,11 @@ body {
   padding: 1%;
   border: 1px solid black;
   text-align: center;
-  /* width: 50%; */
-  justify-content: center; }
+  justify-content: center;
+  background-color: #ff694b;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 5%; }
 
 .Colors {
   background-color: black; }

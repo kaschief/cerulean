@@ -11,17 +11,19 @@ class Card extends Component {
     let g = this.props.rgb ? ` ${this.props.rgb.g},` : '';
     let b = this.props.rgb ? ` ${this.props.rgb.b}` : '';
     let subHex = this.props.hex.substring(1, 7);
+    // let toneClass;
+    // this.props.dark ? (toneClass = 'highlight') : (toneClass = 'highdark');
     return (
       <div className="info">
         {this.props.rgb && (
           <Link to={'/colors/' + subHex}>
             <div>
-              <p>{this.props.name}</p>
-              <p>
+              <p className="highlight">{this.props.name}</p>
+              <p className="highlight">
                 Hex:
                 {` ${this.props.hex}`}{' '}
               </p>
-              <p>RGB: {`${r} ${g} ${b}`} </p>
+              <p className="highlight">RGB: {`${r} ${g} ${b}`} </p>
             </div>
           </Link>
         )}

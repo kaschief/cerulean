@@ -10,6 +10,7 @@ import Favorites from './components/Favorites';
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
+import tinycolor from 'tinycolor2';
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class App extends Component {
         'https://images.unsplash.com/photo-1463438690606-f6778b8c1d10?ixlib=rb-0.3.5&s=974c85db1b734c7d1630f3a32f0cc15a&auto=format&fit=crop&w=1534&q=80',
       name: '',
       hex: '',
-      rgb: null
+      rgb: null,
+      dark: ''
     };
 
     this.changeCerulean = this.changeCerulean.bind(this);
@@ -27,10 +29,13 @@ class App extends Component {
 
   changeCerulean(name, hex, rgb) {
     //console.log('Current color is -->', name, rgb);
+    // let color = tinycolor(this.state.hex);
+    // let dark = color.isDark();
     this.setState({
       name: name,
       hex: hex,
       rgb: rgb
+      // dark: dark
     });
   }
 
@@ -58,6 +63,7 @@ class App extends Component {
                   name={this.state.name}
                   hex={this.state.hex}
                   rgb={this.state.rgb}
+                  //dark={this.state.dark}
                   onHover={this.changeCerulean}
                 />
               )}

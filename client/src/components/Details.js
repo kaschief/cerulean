@@ -126,6 +126,7 @@ class Details extends Component {
           tetrad={this.state.tetrad}
           splitcomplement={this.state.splitcomplement}
           monochromatic={this.state.monochromatic}
+          //dark={this.state.dark}
           onHover={this.props.onHover}
         />
       </div>

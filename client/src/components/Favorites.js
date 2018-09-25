@@ -13,15 +13,12 @@ export default class Favorites extends Component {
   }
   componentDidMount(props) {
     api.getColors().then(colors => {
-      console.log('getting the colors from the API', colors);
       this.setState({
         colors: colors
       });
-      console.log('state was set', this.state);
     });
   }
   render() {
-    console.log('AFTER IT MOUNTS', this.state);
     return (
       <div className="Favorite">
         <div className="my-colors">
