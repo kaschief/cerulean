@@ -7,7 +7,8 @@ export default class Login extends Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      error: ''
     };
   }
 
@@ -26,6 +27,9 @@ export default class Login extends Component {
         this.props.history.push('/favorites'); // Redirect to the home page
       })
       .catch(err => {
+        this.setState({
+          error: 'Please check the username/password and try again'
+        });
         console.log('LOGIN ERROR');
       });
   };
@@ -38,7 +42,6 @@ export default class Login extends Component {
             <div className="wrap-login100">
               <form className="login100-form validate-form">
                 <span className="login100-form-title p-b-34">Log In</span>
-
                 <div
                   className="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
                   data-validate="Type user name"
@@ -68,7 +71,11 @@ export default class Login extends Component {
                   />
                   <span className="focus-input100" />
                 </div>
-
+                {this.state.error.length > 0 && (
+                  <div className="error-box">
+                    <p>{this.state.error}</p>
+                  </div>
+                )}
                 <div className="container-login100-form-btn">
                   <button
                     className="login100-form-btn"

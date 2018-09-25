@@ -82,6 +82,18 @@ body {
 .searchBar {
   padding-top: 20%;
 }
+.error-box > p {
+  border: 1.5px solid white;
+  margin-left: 8%;
+  margin-right: 11%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  background-color: rgba(255, 0, 0, 0.9);
+  border-radius: 19px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+}
 
 .Box {
   display: inline-flex;
@@ -165,6 +177,7 @@ body {
   color: white;
   .txt3 {
     color: yellow;
+    //font-family: Rale;
   }
 }
 
