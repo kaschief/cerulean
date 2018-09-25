@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import api from '../api';
+import ReactDOM from 'react-dom';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import {
-  Card,
-  Table,
-  CardText,
-  CardBody,
-  CardSubtitle
-  //Button
-} from 'reactstrap';
+import { Card, Table, CardText, CardBody, CardSubtitle } from 'reactstrap';
 
 export default class Info extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      value: this.props.hex,
+      copied: false
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -37,6 +36,7 @@ export default class Info extends Component {
   }
 
   render() {
+    let term = this.props.family;
     return (
       <div>
         <Card style={{ backgroundColor: '#F7F7F7', color: 'black' }}>
@@ -58,7 +58,6 @@ export default class Info extends Component {
                 </div>{' '}
               </div>
             )}
-
             <div>
               This is a {this.props.dark ? 'DARK ' : 'LIGHT '}
               color.
@@ -88,13 +87,25 @@ export default class Info extends Component {
                 onClick={this.handleSubmit}
               />
             )}
-
             {!api.isLoggedIn() && (
               <Link to="/login">
                 {' '}
                 <Button className="save" text={'Log In to Save'} />
               </Link>
             )}
+            <div>
+              <CopyToClipboard
+                text={this.state.value}
+                onCopy={() => this.setState({ copied: true })}
+              >
+                <Button className="save" text={'Copy to Clipboard'} />
+              </CopyToClipboard>
+              <div className="section">
+                {this.state.copied ? (
+                  <span style={{ color: 'red' }}>Copied.</span>
+                ) : null}
+              </div>
+            </div>
           </CardBody>
         </Card>
       </div>
