@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import api from '../api';
-import ReactDOM from 'react-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { Card, Table, CardText, CardBody, CardSubtitle } from 'reactstrap';
@@ -36,7 +35,6 @@ export default class Info extends Component {
   }
 
   render() {
-    let term = this.props.family;
     return (
       <div>
         <Card style={{ backgroundColor: '#F7F7F7', color: 'black' }}>

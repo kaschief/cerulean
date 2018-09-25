@@ -6,6 +6,14 @@ import allcolors from '../allcolors.json';
 
 const MAX_RESULT = 200;
 
+const mainBg = {
+  backgroundImage:
+    'url("https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a75db13d7de4af6166c7f885998763b&auto=format&fit=crop&w=993&q=80")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
+};
+
 export default class Colors extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +24,13 @@ export default class Colors extends Component {
     };
   }
 
+  componentDidMount() {
+    document.body.className = 'pg1';
+  }
+
+  componentWillUnmount() {
+    document.body.className = 'body';
+  }
   inputHandle = event => {
     //capture new search term
     let newTerm = event.target.value;
@@ -66,24 +81,26 @@ export default class Colors extends Component {
   };
   render() {
     return (
-      <div className="Colors text-center container">
-        <Search
-          search={this.state.searchTerm}
-          change={e => this.inputHandle(e)}
-        />
-        <div className="Group">
-          {this.state.displayedColors.map(c => {
-            return (
-              <Box
-                key={c.hex}
-                name={c.name}
-                hex={c.hex}
-                rgb={c.rgb}
-                //dark={this.props.dark}
-                onHover={this.props.onHover}
-              />
-            );
-          })}
+      <div className="pg1">
+        <div className="Colors text-center container">
+          <Search
+            search={this.state.searchTerm}
+            change={e => this.inputHandle(e)}
+          />
+          <div className="Group">
+            {this.state.displayedColors.map(c => {
+              return (
+                <Box
+                  key={c.hex}
+                  name={c.name}
+                  hex={c.hex}
+                  rgb={c.rgb}
+                  //dark={this.props.dark}
+                  onHover={this.props.onHover}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     );

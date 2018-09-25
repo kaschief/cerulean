@@ -271,6 +271,13 @@ body {
   //color: white;
 }
 
+.clicked {
+  color: #007bff;
+  background-color: green;
+  background-image: none;
+  border-color: #007bff;
+}
+
 .my-colors {
   padding: 1%;
   border: 1px solid black;
@@ -305,6 +312,17 @@ body {
   padding-bottom: 3%;
   color: white;
 }
+
+.pg1 {
+  background-image: url('https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a75db13d7de4af6166c7f885998763b&auto=format&fit=crop&w=993&q=80');
+  background-repeat: no-repeat;
+  filter: blur(0px);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Dosis', sans-serif;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -336,25 +354,6 @@ body {
   padding: 0px;
   box-sizing: border-box;
 }
-
-// body,
-// html {
-//   height: 100%;
-//   font-family: Poppins-Regular, sans-serif;
-// }
-
-/*---------------------------------------------*/
-// a {
-//   font-family: Poppins-Regular;
-//   font-size: 14px;
-//   line-height: 1.7;
-//   color: #666666;
-//   margin: 0px;
-//   transition: all 0.4s;
-//   -webkit-transition: all 0.4s;
-//   -o-transition: all 0.4s;
-//   -moz-transition: all 0.4s;
-// }
 
 a:focus {
   outline: none !important;
