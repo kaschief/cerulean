@@ -11,7 +11,6 @@ import {
   CardSubtitle
   //Button
 } from 'reactstrap';
-import tinycolor from 'tinycolor2';
 
 export default class Info extends Component {
   constructor(props) {
@@ -29,7 +28,8 @@ export default class Info extends Component {
       analagous: this.props.analagous,
       tetrad: this.props.tetrad,
       splitcomplement: this.props.splitcomplement,
-      monochromatic: this.props.monochromatic
+      monochromatic: this.props.monochromatic,
+      isFavorite: true
     };
     api.addColor(newColor).then(data => {
       console.log('adding the new color', data);
@@ -37,8 +37,6 @@ export default class Info extends Component {
   }
 
   render() {
-    let color = tinycolor(this.props.hex);
-    let dark = color.isDark();
     return (
       <div>
         <Card style={{ backgroundColor: '#F7F7F7', color: 'black' }}>
@@ -62,7 +60,7 @@ export default class Info extends Component {
             )}
 
             <div>
-              This is a {dark ? 'DARK ' : 'LIGHT '}
+              This is a {this.props.dark ? 'DARK ' : 'LIGHT '}
               color.
             </div>
             <div>

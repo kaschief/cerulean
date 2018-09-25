@@ -17,11 +17,14 @@ class Details extends Component {
       analagous: [],
       tetrad: [],
       splitcomplement: [],
-      monochromatic: []
+      monochromatic: [],
+      dark: ''
     };
   }
 
   componentDidMount = () => {
+    let color = tinycolor(this.state.hex);
+
     //find name
     let name = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
@@ -49,8 +52,6 @@ class Details extends Component {
     }).rgb;
 
     //get analagous, tetrad, splitcomplement, monochromatic
-    let color = tinycolor(this.state.hex);
-    // let rgb = color.toRgb();
 
     let analagous = tinycolor(this.state.hex)
       .analogous()
@@ -84,14 +85,22 @@ class Details extends Component {
       analagous: analagous,
       tetrad: tetrad,
       splitcomplement: splitcomplement,
-      monochromatic: monochromatic
+      monochromatic: monochromatic,
+      dark: color.isDark()
     });
   };
   render() {
+    let style;
+    this.state.dark
+      ? (style = {
+          color: 'white'
+        })
+      : (style = { color: 'black' });
+    console.log('DARK STATE', this.state.dark);
     return (
       <div className="Details text-center">
         <div className="title" style={{ backgroundColor: `${this.state.hex}` }}>
-          <h1>{this.state.name}</h1>
+          <h1 style={style}>{this.state.name}</h1>
         </div>
         <div className="main-div">
           <Info
@@ -104,6 +113,7 @@ class Details extends Component {
             tetrad={this.state.tetrad}
             splitcomplement={this.state.splitcomplement}
             monochromatic={this.state.monochromatic}
+            dark={this.state.dark}
           />
         </div>
         <Dimensions

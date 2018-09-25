@@ -26,7 +26,7 @@ router.post('/', isLoggedIn, (req, res, next) => {
     splitcomplement: req.body.splitcomplement,
     monochromatic: req.body.monochromatic,
     _owner: req.user.id,
-    isFavorite: true
+    isFavorite: req.body.true
   };
   Color.create(newColor)
     .then(color => {
