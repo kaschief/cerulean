@@ -6430,6 +6430,11 @@ body {
   height: 100vh;
   width: 50%; }
 
+.newuser {
+  color: white; }
+  .newuser .txt3 {
+    color: yellow; }
+
 #background-video {
   /*  making the video fullscreen  */
   position: fixed;

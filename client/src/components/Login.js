@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../api';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor(props) {
@@ -32,63 +33,59 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <div class="limiter">
-          <div class="container-login100">
-            <div class="wrap-login100">
-              <form class="login100-form validate-form">
-                <span class="login100-form-title p-b-34">Account Login</span>
+        <div className="limiter">
+          <div className="container-login100">
+            <div className="wrap-login100">
+              <form className="login100-form validate-form">
+                <span className="login100-form-title p-b-34">Log In</span>
 
                 <div
-                  class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
+                  className="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
                   data-validate="Type user name"
                 >
                   <input
                     id="first-name"
-                    class="input100"
+                    className="input100"
                     type="text"
                     name="username"
-                    placeholder="User name"
+                    placeholder="Username"
                     value={this.state.usename}
                     onChange={e => this.handleInputChange('username', e)}
                   />
-                  <span class="focus-input100" />
+                  <span className="focus-input100" />
                 </div>
                 <div
-                  class="wrap-input100 rs2-wrap-input100 validate-input m-b-20"
+                  className="wrap-input100 rs2-wrap-input100 validate-input m-b-20"
                   data-validate="Type password"
                 >
                   <input
-                    class="input100"
+                    className="input100"
                     type="password"
                     name="pass"
-                    placeholder="password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={e => this.handleInputChange('password', e)}
                   />
-                  <span class="focus-input100" />
+                  <span className="focus-input100" />
                 </div>
 
-                <div class="container-login100-form-btn">
+                <div className="container-login100-form-btn">
                   <button
-                    class="login100-form-btn"
+                    className="login100-form-btn"
                     onClick={e => this.handleClick(e)}
                   >
-                    Sign in
+                    Log In
                   </button>
                 </div>
-
-                {/* <div class="w-full text-center p-t-27 p-b-239">
-                  <span class="txt1">Forgot</span>
-
-                  <a href="#" class="txt2">
-                    User name / password?
-                  </a>
-                </div> */}
-
-                <div class="w-full text-center">
-                  <a href="#" class="txt3">
-                    Sign Up
-                  </a>
+                <div className="w-full text-center">
+                  <span>
+                    <p className="newuser">
+                      New user?{' '}
+                      <Link to="/signup" className="txt3">
+                        Sign up here.
+                      </Link>
+                    </p>
+                  </span>
                 </div>
               </form>
 

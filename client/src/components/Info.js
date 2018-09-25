@@ -94,11 +94,7 @@ export default class Info extends Component {
             {!api.isLoggedIn() && (
               <Link to="/login">
                 {' '}
-                <Button
-                  className="save"
-                  text={'Login to Save'}
-                  //onClick={this.handleSubmit}
-                />
+                <Button className="save" text={'Log In to Save'} />
               </Link>
             )}
           </CardBody>
