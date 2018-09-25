@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Secret from './components/Secret';
 import Details from './components/Details';
 import Favorites from './components/Favorites';
+import NotFound from './components/NotFound';
 
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
@@ -88,6 +89,7 @@ class App extends Component {
                 <Favorites {...props} onHover={this.changeCerulean} />
               )}
             />
+            <Route path="" component={NotFound} />
           </Switch>
         </Container>
       </div>

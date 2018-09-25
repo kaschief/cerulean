@@ -6554,6 +6554,12 @@ body {
   background-size: cover;
   font-family: 'Dosis', sans-serif; }
 
+.drunk {
+  margin-top: 20%;
+  margin-left: 20%;
+  background-color: red;
+  margin-right: 29%; }
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 /*//////////////////////////////////////////////////////////////////
