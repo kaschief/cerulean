@@ -29,21 +29,20 @@ export default class About extends Component {
                 <Col>
                   <img className="kash" src="../../kash.png" alt="kash" />
                   <div className="contact">
-                    <p>Contact Me</p>
                     <hr />
                     <div className="contact-info">
+                      <p>Contact Me</p>
+                      <hr />
                       <a
                         href="https://www.linkedin.com/in/kaschief-johnson-56a23a107/"
                         target="_blank"
                       >
                         <p>LinkedIn</p>
                       </a>
-
                       <p>
-                        E-mail:
                         <a href="mailto:kash@mail.berlin"> kash@mail.berlin</a>
                       </p>
-                      <p>Telephone: +49 177 350 9956</p>
+                      <p>+49 177 350 9956</p>
                     </div>
                   </div>
                 </Col>
@@ -69,28 +68,4 @@ export default class About extends Component {
       </div>
     );
   }
-}
-
-{
-  /* <Row>
-          <Col sm="3" className="dimensions-text">
-            Monochromatic
-          </Col>
-          <Col sm="9">
-            {this.props.monochromatic.map(c => {
-              let color = tinycolor(c);
-              let rgb = color.toRgb();
-
-              return (
-                <Box
-                  key={c}
-                  //name={name}
-                  hex={c}
-                  rgb={rgb}
-                  onHover={this.props.onHover}
-                />
-              );
-            })}
-          </Col>
-        </Row> */
 }
