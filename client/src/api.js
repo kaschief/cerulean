@@ -31,8 +31,9 @@ export default {
   },
 
   deleteSingleColor(id) {
+    console.log('here is the ID i will send--->', id);
     return service
-      .delete('/colors/:id', id)
+      .delete('/colors/' + id)
       .then(res => res.data)
       .catch(errHandler);
   },

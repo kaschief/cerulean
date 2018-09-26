@@ -120,26 +120,3 @@ export default class Signup extends Component {
     );
   }
 }
-
-{
-  /* <div className="Signup text-center">
-        <h2>Signup</h2>
-        <form>
-          Username:{' '}
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={e => this.handleInputChange('username', e)}
-          />{' '}
-          <br />
-          Password:{' '}
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={e => this.handleInputChange('password', e)}
-          />{' '}
-          <br />
-          <button onClick={e => this.handleClick(e)}>Signup</button>
-        </form>
-      </div> */
-}

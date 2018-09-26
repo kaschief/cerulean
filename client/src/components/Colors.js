@@ -6,14 +6,6 @@ import allcolors from '../allcolors.json';
 
 const MAX_RESULT = 200;
 
-const mainBg = {
-  backgroundImage:
-    'url("https://images.unsplash.com/photo-1533568024501-de28de1280c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a75db13d7de4af6166c7f885998763b&auto=format&fit=crop&w=993&q=80")',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center'
-};
-
 export default class Colors extends Component {
   constructor(props) {
     super(props);

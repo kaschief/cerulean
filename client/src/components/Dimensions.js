@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import { Container, Row, Col } from 'reactstrap';
 import Box from './Box';
-import allcolors from '../allcolors.json';
 
 class Dimensions extends Component {
   render() {
@@ -105,9 +104,3 @@ class Dimensions extends Component {
 }
 
 export default Dimensions;
-
-{
-  /* let name = allcolors.filter(color => {
-  return color.hex === c;
-}).name; */
-}

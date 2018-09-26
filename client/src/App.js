@@ -7,11 +7,11 @@ import Secret from './components/Secret';
 import Details from './components/Details';
 import Favorites from './components/Favorites';
 import NotFound from './components/NotFound';
-
+import About from './components/About';
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
-import tinycolor from 'tinycolor2';
+// import tinycolor from 'tinycolor2';
 
 class App extends Component {
   constructor(props) {
@@ -89,6 +89,7 @@ class App extends Component {
                 <Favorites {...props} onHover={this.changeCerulean} />
               )}
             />
+            <Route path="/about" component={About} />
             <Route path="" component={NotFound} />
           </Switch>
         </Container>

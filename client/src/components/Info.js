@@ -11,7 +11,8 @@ export default class Info extends Component {
     super(props);
     this.state = {
       value: this.props.hex,
-      copied: false
+      copied: false,
+      savedID: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,10 +30,25 @@ export default class Info extends Component {
       monochromatic: this.props.monochromatic,
       isFavorite: true
     };
+
     api.addColor(newColor).then(data => {
       console.log('adding the new color', data);
+      let id = data.color._id;
+      this.setState({
+        savedID: id
+      });
     });
   }
+
+  deleteColorHandle = () => {
+    console.log('ID before sending---->', this.state.savedID);
+    api.deleteSingleColor(this.state.savedID).then(data => {
+      console.log('Color was REMOVED from favorites', data);
+      this.setState({
+        savedID: ''
+      });
+    });
+  };
 
   render() {
     return (
@@ -78,13 +94,22 @@ export default class Info extends Component {
               </tbody>
             </Table>
 
-            {api.isLoggedIn() && (
-              <Button
-                className="save"
-                text={'Save'}
-                onClick={this.handleSubmit}
-              />
-            )}
+            {!this.state.savedID.length > 0 &&
+              api.isLoggedIn() && (
+                <Button
+                  className="save"
+                  text={'Save'}
+                  onClick={this.handleSubmit}
+                />
+              )}
+            {this.state.savedID.length > 0 &&
+              api.isLoggedIn() && (
+                <Button
+                  className="save"
+                  text={'Delete'}
+                  onClick={this.deleteColorHandle}
+                />
+              )}
             {!api.isLoggedIn() && (
               <Link to="/login">
                 {' '}
@@ -92,6 +117,9 @@ export default class Info extends Component {
               </Link>
             )}
             <div>
+              <div>
+                <hr className="divider" />
+              </div>
               <CopyToClipboard
                 text={this.state.value}
                 onCopy={() => this.setState({ copied: true })}

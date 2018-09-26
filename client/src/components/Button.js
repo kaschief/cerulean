@@ -8,9 +8,9 @@ class Button extends Component {
   //   };
   // }
 
-  changeColor() {
-    this.setState({ black: !this.state.black });
-  }
+  // changeColor() {
+  //   this.setState({ black: !this.state.black });
+  // }
 
   render() {
     // let btn_class = this.state.black ? 'blackButton' : 'whiteButton';

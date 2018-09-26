@@ -6403,7 +6403,8 @@ body {
   border-radius: 25px; }
 
 .Favorites {
-  background-color: black; }
+  background-color: black;
+  border-radius: 10px; }
 
 .zoom {
   padding: 100%;
@@ -6454,7 +6455,8 @@ body {
   border-radius: 5px; }
 
 .newuser {
-  color: white; }
+  color: white;
+  margin-top: 10%; }
   .newuser .txt3 {
     color: yellow; }
 
@@ -6537,7 +6539,11 @@ body {
   margin-bottom: 5%; }
 
 .Colors {
-  background-color: black; }
+  background-color: black;
+  border-radius: 25px; }
+
+.Details {
+  padding-bottom: 20px; }
 
 #root > div > div.container > div > div > div > div > form > div.container-login100-form-btn > button {
   padding-left: 35%;
@@ -6574,10 +6580,6 @@ body {
   background-size: cover;
   font-family: 'Dosis', sans-serif; }
 
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
 * {
   margin: 0px;
   padding: 0px;
@@ -6768,14 +6770,6 @@ iframe {
   text-transform: uppercase;
   padding-bottom: 10%;
   display: block; }
-
-.blackButton {
-  background-color: black;
-  color: white; }
-
-.whiteButton {
-  background-color: white;
-  color: black; }
 
 /*------------------------------------------------------------------
 [ Input ]*/
