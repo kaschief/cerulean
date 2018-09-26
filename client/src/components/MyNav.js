@@ -45,17 +45,28 @@ export default class MyNav extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
+                <NavItem className="hovered">
+                  <Link to="/about">About</Link>
+                </NavItem>
                 <NavItem>
-                  <NavLink activeClassName="active" to="/colors">
-                    Colors
-                  </NavLink>
+                  <Link to="/colors">Colors</Link>
                 </NavItem>
                 <NavItem className="hovered">
                   {!api.isLoggedIn() && <Link to="/login">Login</Link>}
+                </NavItem>
+                <NavItem className="hovered">
                   {!api.isLoggedIn() && <Link to="/signup">Signup</Link>}
+                </NavItem>
+                <NavItem className="hovered">
                   {api.isLoggedIn() && (
                     <NavItem>
                       <Link to="/favorites">Favorites</Link>
+                    </NavItem>
+                  )}
+                </NavItem>
+                <NavItem className="hovered">
+                  {api.isLoggedIn() && (
+                    <NavItem>
                       <Link
                         to="/colors"
                         onClick={e => this.handleLogoutClick(e)}

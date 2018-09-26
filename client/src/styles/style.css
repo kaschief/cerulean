@@ -6349,15 +6349,45 @@ h1 {
 
 body {
   background-image: url("https://images.unsplash.com/photo-1463438690606-f6778b8c1d10?ixlib=rb-0.3.5&s=974c85db1b734c7d1630f3a32f0cc15a&auto=format&fit=crop&w=1534&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
   background-attachment: fixed;
   -moz-background-size: cover;
+  background-repeat: repeat;
+  background-position: right;
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Dosis', sans-serif;
   height: 100%;
   width: 100%; }
+
+#root > div > div.container > div > div > div.creator-info > div {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.creator {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%; }
+
+.contact {
+  padding: 5%; }
+  .contact p {
+    color: white;
+    font-size: 20px; }
+
+.contact-info {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 10%; }
+
+#root > div > div.container > div > div > div:nth-child(1) > div > div > h1 {
+  text-align: center;
+  color: white; }
+
+.kash {
+  border-radius: 25%;
+  display: inline-block; }
+
+#root > div > div.container > div > div > div.creator-info > div > div > div:nth-child(1) {
+  text-align: center; }
 
 html {
   height: 100%;
@@ -6383,6 +6413,15 @@ html {
   font-size: 12px;
   text-align: center;
   color: white; }
+
+#root > div > div.container > div > div > div.creator-info > div > div > div:nth-child(2) > p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: white;
+  margin: 5px; }
+
+.creator-heading {
+  color: red; }
 
 .Box {
   display: inline-flex;
