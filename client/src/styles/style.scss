@@ -10,7 +10,7 @@
 $mycolor: blue;
 
 @import 'bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Dosis|Rock+Salt|Nothing+You+Could+Do');
+@import url('https://fonts.googleapis.com/css?family=Dosis|Rock+Salt|Nothing+You+Could+Do|Indie+Flower');
 
 // You can put your own SCSS here
 
@@ -107,6 +107,12 @@ body {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 10%;
+  p {
+    font-family: 'Indie Flower', cursive;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 #root > div > div.container > div > div > div:nth-child(1) > div > div > h1 {
   text-align: center;
@@ -117,6 +123,9 @@ body {
   display: inline-block;
 }
 
+.contact p {
+  font-family: 'Indie Flower', cursive;
+}
 #root
   > div
   > div.container
@@ -128,14 +137,7 @@ body {
   > div:nth-child(1) {
   text-align: center;
 }
-// .creator-info {
-//   margin-left: 25%;
-//   margin-right: 25%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin-top: 15%;
-// }
+
 html {
   height: 100%;
   width: 100%;
@@ -177,13 +179,15 @@ html {
   > div:nth-child(2)
   > p {
   font-size: 20px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: white;
   margin: 5px;
+  font-family: 'Indie Flower', cursive;
 }
 
 .creator-heading {
   color: red;
+  font-family: 'Indie Flower', cursive;
 }
 
 .Box {

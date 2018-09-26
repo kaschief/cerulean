@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Dosis|Rock+Salt|Nothing+You+Could+Do");
+@import url("https://fonts.googleapis.com/css?family=Dosis|Rock+Salt|Nothing+You+Could+Do|Indie+Flower");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6377,6 +6377,10 @@ body {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 10%; }
+  .contact-info p {
+    font-family: 'Indie Flower', cursive; }
+  .contact-info a {
+    text-decoration: none; }
 
 #root > div > div.container > div > div > div:nth-child(1) > div > div > h1 {
   text-align: center;
@@ -6385,6 +6389,9 @@ body {
 .kash {
   border-radius: 25%;
   display: inline-block; }
+
+.contact p {
+  font-family: 'Indie Flower', cursive; }
 
 #root > div > div.container > div > div > div.creator-info > div > div > div:nth-child(1) {
   text-align: center; }
@@ -6416,12 +6423,14 @@ html {
 
 #root > div > div.container > div > div > div.creator-info > div > div > div:nth-child(2) > p {
   font-size: 20px;
-  line-height: 1.7;
+  line-height: 1.5;
   color: white;
-  margin: 5px; }
+  margin: 5px;
+  font-family: 'Indie Flower', cursive; }
 
 .creator-heading {
-  color: red; }
+  color: red;
+  font-family: 'Indie Flower', cursive; }
 
 .Box {
   display: inline-flex;

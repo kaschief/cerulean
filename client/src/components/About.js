@@ -32,8 +32,17 @@ export default class About extends Component {
                     <p>Contact Me</p>
                     <hr />
                     <div className="contact-info">
-                      <p>LinkedIn: Link</p>
-                      <p>E-mail: kash@mail.berlin</p>
+                      <a
+                        href="https://www.linkedin.com/in/kaschief-johnson-56a23a107/"
+                        target="_blank"
+                      >
+                        <p>LinkedIn</p>
+                      </a>
+
+                      <p>
+                        E-mail:
+                        <a href="mailto:kash@mail.berlin"> kash@mail.berlin</a>
+                      </p>
                       <p>Telephone: +49 177 350 9956</p>
                     </div>
                   </div>
