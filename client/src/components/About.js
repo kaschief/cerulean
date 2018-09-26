@@ -54,7 +54,7 @@ export default class About extends Component {
                     Ironhack, in Berlin.
                     <hr />
                     The complete MERN stack was used. The website's front end
-                    was build entirely in ReactJS, HTML5 and CSS. The backend
+                    was built entirely in ReactJS, HTML5 and CSS. The backend
                     was constructed using NodeJS, Express and MongoDB.
                     <hr />
                     Thanks for visiting!
