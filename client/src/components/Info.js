@@ -19,9 +19,7 @@ export default class Info extends Component {
 
   componentDidMount() {
     let hex = this.props.hex.substring(1, 7);
-    console.log('component is mounting', hex);
     api.checkColor(hex).then(res => {
-      console.log('THIS IS RES--->', res);
       if (res.isFavorite) {
         this.setState({
           savedID: res.color._id
