@@ -74,16 +74,6 @@ body {
   font-family: 'Dosis', sans-serif;
   height: 100%;
   width: 100%;
-
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-attachment: fixed;
-  // webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-  // height:100%;
-  // width:100%;
 }
 #root > div > div.container > div > div > div.creator-info > div {
   background-color: rgba(0, 0, 0, 0.5);
@@ -396,9 +386,9 @@ html {
   border-radius: 25px;
 }
 
-.About {
-  padding-bottom: 5%;
-}
+// .About {
+//   padding-bottom: 5%;
+// }
 .Details {
   padding-bottom: 20px;
 }
