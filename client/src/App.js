@@ -22,7 +22,9 @@ class App extends Component {
       name: '',
       hex: '',
       rgb: null,
-      dark: ''
+      dark: '',
+      favorite: false,
+      savedID: ''
     };
 
     this.changeCerulean = this.changeCerulean.bind(this);
@@ -37,6 +39,13 @@ class App extends Component {
       hex: hex,
       rgb: rgb
       // dark: dark
+    });
+  }
+
+  makeFavorite(id) {
+    this.setState({
+      favorite: true
+      //savedID: id
     });
   }
 
@@ -66,6 +75,7 @@ class App extends Component {
                   rgb={this.state.rgb}
                   //dark={this.state.dark}
                   onHover={this.changeCerulean}
+                  favorite={this.makeFavorite}
                 />
               )}
             />
@@ -79,6 +89,7 @@ class App extends Component {
                   hex={this.state.hex}
                   rgb={this.state.rgb}
                   onHover={this.changeCerulean}
+                  favorite={this.makeFavorite}
                 />
               )}
             />
@@ -86,7 +97,11 @@ class App extends Component {
               exact
               path="/favorites"
               render={props => (
-                <Favorites {...props} onHover={this.changeCerulean} />
+                <Favorites
+                  {...props}
+                  onHover={this.changeCerulean}
+                  favorite={this.makeFavorite}
+                />
               )}
             />
             <Route path="/about" component={About} />

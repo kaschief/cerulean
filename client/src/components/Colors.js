@@ -89,6 +89,7 @@ export default class Colors extends Component {
                   rgb={c.rgb}
                   //dark={this.props.dark}
                   onHover={this.props.onHover}
+                  favorite={this.props.favorite}
                 />
               );
             })}

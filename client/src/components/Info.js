@@ -17,6 +17,22 @@ export default class Info extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    let hex = this.props.hex.substring(1, 7);
+    console.log('component is mounting', hex);
+    api.checkColor(hex).then(res => {
+      console.log('THIS IS RES--->', res);
+      if (res.isFavorite) {
+        this.setState({
+          savedID: res.color._id
+        });
+      } else
+        this.setState({
+          savedID: ''
+        });
+    });
+  }
+
   handleSubmit() {
     let newColor = {
       hex: this.props.hex,

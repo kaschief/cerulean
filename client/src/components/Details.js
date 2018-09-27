@@ -119,6 +119,7 @@ class Details extends Component {
             splitcomplement={this.state.splitcomplement}
             monochromatic={this.state.monochromatic}
             dark={this.state.dark}
+            favorite={this.props.favorite}
           />
         </div>
         <Dimensions

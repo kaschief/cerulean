@@ -81,6 +81,27 @@ router.delete('/:id', isLoggedIn, (req, res, next) => {
     });
 });
 
+router.get('/is-favorite/:hex', isLoggedIn, (req, res, next) => {
+  console.log('THIS IS THE HEX--->', req.params.hex);
+  Color.findOne({
+    $and: [{ _owner: req.user.id }, { hex: '#' + req.params.hex }]
+  })
+    .then(color => {
+      //console.log('THIS IS WHAT WAS FOUND---->', color);
+      if (!color) {
+        res.json({
+          isFavorite: false
+        });
+      } else {
+        res.json({
+          isFavorite: true,
+          color
+        });
+      }
+    })
+    .catch(err => next(err));
+});
+
 // // Route to remove a color
 // router.put('/:id', isLoggedIn, (req, res, next) => {
 //   const id = req.params.id;

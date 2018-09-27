@@ -23,9 +23,16 @@ export default {
       .catch(errHandler);
   },
 
-  getSingleColor(id) {
+  // getSingleColor(id) {
+  //   return service
+  //     .get('/colors/:id', id)
+  //     .then(res => res.data)
+  //     .catch(errHandler);
+  // },
+
+  checkColor(hex) {
     return service
-      .get('/colors/:id', id)
+      .get('/colors/is-favorite/' + hex)
       .then(res => res.data)
       .catch(errHandler);
   },
