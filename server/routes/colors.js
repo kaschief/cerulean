@@ -87,7 +87,6 @@ router.get('/is-favorite/:hex', isLoggedIn, (req, res, next) => {
     $and: [{ _owner: req.user.id }, { hex: '#' + req.params.hex }]
   })
     .then(color => {
-      //console.log('THIS IS WHAT WAS FOUND---->', color);
       if (!color) {
         res.json({
           isFavorite: false
