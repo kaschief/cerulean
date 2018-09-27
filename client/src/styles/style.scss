@@ -259,6 +259,25 @@ html {
   }
 }
 
+.yoto {
+  width: 100%;
+  height: auto;
+  margin: -21.875% 0;
+  border-radius: 15%;
+}
+#root
+  > div
+  > div.container
+  > div
+  > div:nth-child(2)
+  > div.creator-info
+  > div
+  > div
+  > div:nth-child(2)
+  > h1 {
+  margin-left: 10%;
+  margin-right: 12%;
+}
 .info {
   display: none;
 }
@@ -271,6 +290,7 @@ html {
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid white;
   border-radius: 5px;
+  border-radius: 10%;
 }
 
 .newuser {

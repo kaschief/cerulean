@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 export default class About extends Component {
   componentDidMount() {
@@ -59,6 +58,38 @@ export default class About extends Component {
                     <hr />
                     Thanks for visiting!
                     <br />
+                  </p>
+                </Col>
+              </Row>
+            </div>
+          </div>
+        </Container>
+        <Container>
+          <Row>
+            <div>
+              <hr />
+            </div>
+          </Row>
+
+          <div className="creator-info">
+            <div className="title">
+              <Row>
+                <Col className="yoto-div">
+                  <img className="yoto" src="../../Yoto.jpeg" alt="kash" />
+                </Col>
+                <Col>
+                  <h1 className="creator-heading">Yoto, the Dog</h1>
+                  <p>
+                    I ate all the bugs in the code, which is why this website
+                    actually works now.
+                    <hr />
+                    And I put my head on Kash's legs while he was coding so that
+                    he didn't get too upset when his code wasn't working.
+                    <hr />
+                    Also, I need MY OWN WEBSITE!
+                    <hr />
+                    Available for rental to offices that need a new Chief
+                    Happiness Officer.
                   </p>
                 </Col>
               </Row>
