@@ -11,7 +11,6 @@ import About from './components/About';
 import Colors from './components/Colors';
 import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
-// import tinycolor from 'tinycolor2';
 
 class App extends Component {
   constructor(props) {
@@ -31,21 +30,16 @@ class App extends Component {
   }
 
   changeCerulean(name, hex, rgb) {
-    //console.log('Current color is -->', name, rgb);
-    // let color = tinycolor(this.state.hex);
-    // let dark = color.isDark();
     this.setState({
       name: name,
       hex: hex,
       rgb: rgb
-      // dark: dark
     });
   }
 
   makeFavorite(id) {
     this.setState({
       favorite: true
-      //savedID: id
     });
   }
 
@@ -73,7 +67,6 @@ class App extends Component {
                   name={this.state.name}
                   hex={this.state.hex}
                   rgb={this.state.rgb}
-                  //dark={this.state.dark}
                   onHover={this.changeCerulean}
                   favorite={this.makeFavorite}
                 />

@@ -41,7 +41,7 @@ export default class About extends Component {
                       <p>
                         <a href="mailto:kash@mail.berlin"> kash@mail.berlin</a>
                       </p>
-                      <p>+49 177 350 9956</p>
+                      <p>+49 176 204 19325</p>
                     </div>
                   </div>
                 </Col>
