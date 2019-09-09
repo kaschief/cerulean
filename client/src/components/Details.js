@@ -26,12 +26,10 @@ class Details extends Component {
     document.body.className = 'pg1';
     let color = tinycolor(this.state.hex);
 
-    //find name
     let name = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
     }).name;
 
-    //find meaning & family
     let meaning;
     let family;
 
@@ -47,12 +45,9 @@ class Details extends Component {
       family = '';
     }
 
-    //get RGB
     let rgb = allcolors.find(c => {
       return c.hex === `${this.state.hex}`;
     }).rgb;
-
-    //get analagous, tetrad, splitcomplement, monochromatic
 
     let analagous = tinycolor(this.state.hex)
       .analogous()
@@ -132,7 +127,6 @@ class Details extends Component {
           tetrad={this.state.tetrad}
           splitcomplement={this.state.splitcomplement}
           monochromatic={this.state.monochromatic}
-          //dark={this.state.dark}
           onHover={this.props.onHover}
         />
       </div>

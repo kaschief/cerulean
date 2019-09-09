@@ -55,9 +55,7 @@ export default class Info extends Component {
   }
 
   deleteColorHandle = () => {
-    console.log('ID before sending---->', this.state.savedID);
     api.deleteSingleColor(this.state.savedID).then(data => {
-      console.log('Color was REMOVED from favorites', data);
       this.setState({
         savedID: ''
       });
@@ -101,29 +99,25 @@ export default class Info extends Component {
                 </tr>
                 <tr>
                   <th scope="row">RGB</th>
-                  <td>{`${this.props.rgb.r}, ${this.props.rgb.g}, ${
-                    this.props.rgb.b
-                  }`}</td>
+                  <td>{`${this.props.rgb.r}, ${this.props.rgb.g}, ${this.props.rgb.b}`}</td>
                 </tr>
               </tbody>
             </Table>
 
-            {!this.state.savedID.length > 0 &&
-              api.isLoggedIn() && (
-                <Button
-                  className="save"
-                  text={'Save'}
-                  onClick={this.handleSubmit}
-                />
-              )}
-            {this.state.savedID.length > 0 &&
-              api.isLoggedIn() && (
-                <Button
-                  className="save"
-                  text={'Delete'}
-                  onClick={this.deleteColorHandle}
-                />
-              )}
+            {!this.state.savedID.length > 0 && api.isLoggedIn() && (
+              <Button
+                className="save"
+                text={'Save'}
+                onClick={this.handleSubmit}
+              />
+            )}
+            {this.state.savedID.length > 0 && api.isLoggedIn() && (
+              <Button
+                className="save"
+                text={'Delete'}
+                onClick={this.deleteColorHandle}
+              />
+            )}
             {!api.isLoggedIn() && (
               <Link to="/login">
                 {' '}

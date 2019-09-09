@@ -66,7 +66,6 @@ export default class Box extends Component {
                 name={this.props.name}
                 hex={this.props.hex}
                 rgb={this.props.rgb}
-                //dark={this.props.dark}
               />
             )}
           </div>

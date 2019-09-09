@@ -36,14 +36,12 @@ export default class Signup extends Component {
     api
       .signup(data)
       .then(result => {
-        console.log('SIGNUP SUCCESS!');
-        this.props.history.push('/login'); // Redirect to the login page
+        this.props.history.push('/login');
       })
       .catch(err => {
         this.setState({
           error: 'Please enter a username/password and try again'
         });
-        console.log(err, 'SIGNUP ERROR');
       });
   };
 
@@ -109,10 +107,7 @@ export default class Signup extends Component {
                 </div>
               </form>
 
-              <div
-                class="login100-more"
-                //style={{backgroundImage: "url('images/bg-01.jpg'"}"}
-              />
+              <div class="login100-more" />
             </div>
           </div>
         </div>

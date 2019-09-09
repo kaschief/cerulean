@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Box from './Box';
 import Search from './Search';
 import allcolors from '../allcolors.json';
-// import tinycolor from 'tinycolor2';
 
 const MAX_RESULT = 200;
 
@@ -11,7 +10,7 @@ export default class Colors extends Component {
     super(props);
     this.state = {
       searchTerm: '',
-      maincolors: allcolors, //allcolors.slice(0, 30)
+      maincolors: allcolors,
       displayedColors: allcolors.slice(0, MAX_RESULT)
     };
   }
@@ -31,9 +30,7 @@ export default class Colors extends Component {
     });
     let delay = 200;
     setTimeout(() => {
-      //console.log('setTimeout', newTerm, this.state.searchTerm);
       if (newTerm === this.state.searchTerm) {
-        //console.log('MATCH');
         let lowerSearch = this.state.searchTerm.toLowerCase();
         if (lowerSearch === '') {
           this.setState({
@@ -87,7 +84,6 @@ export default class Colors extends Component {
                   name={c.name}
                   hex={c.hex}
                   rgb={c.rgb}
-                  //dark={this.props.dark}
                   onHover={this.props.onHover}
                   favorite={this.props.favorite}
                 />

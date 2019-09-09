@@ -16,13 +16,7 @@ class Dimensions extends Component {
               let color = tinycolor(c);
               let rgb = color.toRgb();
               return (
-                <Box
-                  key={c}
-                  //name={name}
-                  hex={c}
-                  rgb={rgb}
-                  onHover={this.props.onHover}
-                />
+                <Box key={c} hex={c} rgb={rgb} onHover={this.props.onHover} />
               );
             })}
           </Col>
@@ -39,13 +33,7 @@ class Dimensions extends Component {
               let color = tinycolor(c);
               let rgb = color.toRgb();
               return (
-                <Box
-                  key={c}
-                  //name={name}
-                  hex={c}
-                  rgb={rgb}
-                  onHover={this.props.onHover}
-                />
+                <Box key={c} hex={c} rgb={rgb} onHover={this.props.onHover} />
               );
             })}
           </Col>
@@ -63,13 +51,7 @@ class Dimensions extends Component {
               let rgb = color.toRgb();
 
               return (
-                <Box
-                  key={c}
-                  //name={name}
-                  hex={c}
-                  rgb={rgb}
-                  onHover={this.props.onHover}
-                />
+                <Box key={c} hex={c} rgb={rgb} onHover={this.props.onHover} />
               );
             })}
           </Col>
@@ -87,13 +69,7 @@ class Dimensions extends Component {
               let rgb = color.toRgb();
 
               return (
-                <Box
-                  key={c}
-                  //name={name}
-                  hex={c}
-                  rgb={rgb}
-                  onHover={this.props.onHover}
-                />
+                <Box key={c} hex={c} rgb={rgb} onHover={this.props.onHover} />
               );
             })}
           </Col>

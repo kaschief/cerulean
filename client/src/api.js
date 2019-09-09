@@ -23,13 +23,6 @@ export default {
       .catch(errHandler);
   },
 
-  // getSingleColor(id) {
-  //   return service
-  //     .get('/colors/:id', id)
-  //     .then(res => res.data)
-  //     .catch(errHandler);
-  // },
-
   checkColor(hex) {
     return service
       .get('/colors/is-favorite/' + hex)
@@ -38,7 +31,6 @@ export default {
   },
 
   deleteSingleColor(id) {
-    console.log('here is the ID i will send--->', id);
     return service
       .delete('/colors/' + id)
       .then(res => res.data)
@@ -98,17 +90,4 @@ export default {
   isLoggedIn() {
     return localStorage.getItem('user') != null;
   }
-
-  // addPicture(file) {
-  //   const formData = new FormData();
-  //   formData.append('picture', file);
-  //   return service
-  //     .post('/users/first-user/pictures', formData, {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data'
-  //       }
-  //     })
-  //     .then(res => res.data)
-  //     .catch(errHandler);
-  // }
 };

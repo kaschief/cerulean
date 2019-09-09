@@ -31,14 +31,12 @@ export default class Login extends Component {
     api
       .login(this.state.username, this.state.password)
       .then(result => {
-        console.log('LOGIN SUCCESS!');
-        this.props.history.push('/favorites'); // Redirect to the home page
+        this.props.history.push('/favorites');
       })
       .catch(err => {
         this.setState({
           error: 'Please check the username/password and try again'
         });
-        console.log('LOGIN ERROR');
       });
   };
 
@@ -104,10 +102,7 @@ export default class Login extends Component {
                 </div>
               </form>
 
-              <div
-                class="login100-more"
-                //style={{backgroundImage: "url('images/bg-01.jpg'"}"}
-              />
+              <div class="login100-more" />
             </div>
           </div>
         </div>
