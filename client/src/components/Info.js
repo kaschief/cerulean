@@ -46,7 +46,6 @@ export default class Info extends Component {
     };
 
     api.addColor(newColor).then(data => {
-      console.log('adding the new color', data);
       let id = data.color._id;
       this.setState({
         savedID: id

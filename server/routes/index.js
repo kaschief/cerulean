@@ -7,7 +7,6 @@ router.get('/secret', isLoggedIn, (req, res, next) => {
     secret: 42,
     user: req.user
   });
-  console.log('Just released the secret');
 });
 
 module.exports = router;

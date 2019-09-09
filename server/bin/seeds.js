@@ -5,13 +5,8 @@ const Color = require('../models/Color');
 
 const bcryptSalt = 10;
 
-// mongoose.set('useCreateIndex', true);
-
 mongoose
-  .connect(
-    'mongodb://localhost/cerulean',
-    { useNewUrlParser: true }
-  )
+  .connect('mongodb://localhost/cerulean', { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -33,7 +28,6 @@ User.deleteMany()
         return User.create(users);
       })
       .then(user => {
-        //console.log('THE USER', user, 'THE LENGTH', user.length, user._id);
         let id = user._id;
 
         let newColorsArray = [
@@ -94,8 +88,6 @@ User.deleteMany()
         ];
 
         return Color.create(newColorsArray).then(newColors => {
-          console.log(newColors);
-          console.log(`${newColors.length} colors were added`);
           mongoose.disconnect();
         });
       });
